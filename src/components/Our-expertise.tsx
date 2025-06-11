@@ -62,7 +62,7 @@ const OurExpertise = () => {
       className="w-full overflow-x-hidden py-20 px-4 md:px-6 lg:px-8 bg-white relative"
     >
       {/* Floating Geometric Elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      <div className="absolute inset-0 overflow-hidden pointer-events-none hidden md:block">
         {/* Top Left Elements */}
         <div
           className="absolute top-20 left-16 w-16 h-16 bg-gradient-to-br from-orange-400 to-orange-500 rounded-lg shadow-lg transform rotate-12 animate-float"

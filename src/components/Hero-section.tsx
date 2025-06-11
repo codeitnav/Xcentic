@@ -21,8 +21,8 @@ const HeroSection = () => {
 
   return (
     <section id="home" className="min-h-screen bg-gray-50 relative overflow-hidden flex items-center py-25 w-full">
-      {/* Floating Geometric Elements */}
-      <div className="absolute inset-0 overflow-hidden">
+      {/* Floating Geometric Elements - Hidden on small mobile screens */}
+      <div className="absolute inset-0 overflow-hidden hidden sm:block">
         {/* Top Left Elements */}
         <div
           className="absolute top-20 left-16 w-16 h-16 bg-gradient-to-br from-orange-400 to-orange-500 rounded-lg shadow-lg transform rotate-12 animate-float"
@@ -96,7 +96,7 @@ const HeroSection = () => {
         >
 
           {/* Main Headline */}
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 mb-6 leading-tight">
+          <h1 className="text-3xl xs:text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight px-2 sm:px-0">
               Driving the Future of
             <br />
             <span className="bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600 bg-clip-text text-transparent">
@@ -105,15 +105,15 @@ const HeroSection = () => {
           </h1>
 
           {/* Subtitle */}
-          <p className="text-lg sm:text-xl lg:text-2xl text-gray-600 mb-12 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg lg:text-xl xl:text-2xl text-gray-600 mb-8 sm:mb-12 max-w-4xl mx-auto leading-relaxed px-4 sm:px-0">
             We drive transformative growth by crafting cutting-edge digital solutions that turn complex challenges into competitive advantages—fueling innovation, agility, and resilience at every step.
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-            <button className="group bg-black hover:bg-gray-800 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 hover:scale-105 hover:shadow-xl flex items-center justify-center space-x-3">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8 sm:mb-16 px-4 sm:px-0">
+            <button className="group bg-black hover:bg-gray-800 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg transition-all duration-300 hover:scale-105 hover:shadow-xl flex items-center justify-center space-x-3">
               <span>Consult Our Experts</span>
-              <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+              <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5 transition-transform group-hover:translate-x-1" />
             </button>
           </div>
 
@@ -140,98 +140,98 @@ const HeroSection = () => {
               </div>
 
               {/* Dashboard Content */}
-              <div className="bg-gradient-to-br from-gray-50 to-white p-8">
+              <div className="bg-gradient-to-br from-gray-50 to-white p-4 sm:p-8">
                 {/* Dashboard Header */}
-                <div className="flex items-center justify-between mb-8">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-6 sm:mb-8 gap-4 sm:gap-0">
                   <div>
-                    <h3 className="text-2xl font-bold text-gray-900">Project Dashboard</h3>
-                    <p className="text-gray-600">Real-time development insights</p>
+                    <h3 className="text-xl sm:text-2xl font-bold text-gray-900">Project Dashboard</h3>
+                    <p className="text-sm sm:text-base text-gray-600">Real-time development insights</p>
                   </div>
                   <div className="flex items-center space-x-4">
-                    <div className="flex items-center space-x-2 bg-emerald-100 rounded-full px-4 py-2">
+                    <div className="flex items-center space-x-2 bg-emerald-100 rounded-full px-3 sm:px-4 py-1 sm:py-2">
                       <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
-                      <span className="text-sm font-semibold text-emerald-700">LIVE</span>
+                      <span className="text-xs sm:text-sm font-semibold text-emerald-700">LIVE</span>
                     </div>
-                    <div className="w-12 h-12 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-full"></div>
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-full"></div>
                   </div>
                 </div>
 
                 {/* Stats Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
-                  <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
-                    <div className="flex items-center justify-between mb-4">
-                      <BarChart3 className="h-8 w-8 text-emerald-600" />
-                      <span className="text-sm font-semibold text-emerald-600 bg-emerald-100 px-2 py-1 rounded-full">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-6 mb-6 sm:mb-8">
+                  <div className="bg-white rounded-xl p-4 sm:p-6 shadow-sm border border-gray-100">
+                    <div className="flex items-center justify-between mb-3 sm:mb-4">
+                      <BarChart3 className="h-6 w-6 sm:h-8 sm:w-8 text-emerald-600" />
+                      <span className="text-xs sm:text-sm font-semibold text-emerald-600 bg-emerald-100 px-2 py-1 rounded-full">
                         +23%
                       </span>
                     </div>
-                    <div className="text-3xl font-bold text-gray-900">500+</div>
-                    <div className="text-gray-600">Projects Delivered</div>
+                    <div className="text-2xl sm:text-3xl font-bold text-gray-900">500+</div>
+                    <div className="text-xs sm:text-sm text-gray-600">Projects Delivered</div>
                   </div>
-                  <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
-                    <div className="flex items-center justify-between mb-4">
-                      <TrendingUp className="h-8 w-8 text-blue-600" />
-                      <span className="text-sm font-semibold text-blue-600 bg-blue-100 px-2 py-1 rounded-full">
+                  <div className="bg-white rounded-xl p-4 sm:p-6 shadow-sm border border-gray-100">
+                    <div className="flex items-center justify-between mb-3 sm:mb-4">
+                      <TrendingUp className="h-6 w-6 sm:h-8 sm:w-8 text-blue-600" />
+                      <span className="text-xs sm:text-sm font-semibold text-blue-600 bg-blue-100 px-2 py-1 rounded-full">
                         +5.2%
                       </span>
                     </div>
-                    <div className="text-3xl font-bold text-gray-900">98.5%</div>
-                    <div className="text-gray-600">Client Satisfaction</div>
+                    <div className="text-2xl sm:text-3xl font-bold text-gray-900">98.5%</div>
+                    <div className="text-xs sm:text-sm text-gray-600">Client Satisfaction</div>
                   </div>
-                  <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
-                    <div className="flex items-center justify-between mb-4">
-                      <Users className="h-8 w-8 text-purple-600" />
-                      <span className="text-sm font-semibold text-purple-600 bg-purple-100 px-2 py-1 rounded-full">
+                  <div className="bg-white rounded-xl p-4 sm:p-6 shadow-sm border border-gray-100">
+                    <div className="flex items-center justify-between mb-3 sm:mb-4">
+                      <Users className="h-6 w-6 sm:h-8 sm:w-8 text-purple-600" />
+                      <span className="text-xs sm:text-sm font-semibold text-purple-600 bg-purple-100 px-2 py-1 rounded-full">
                         +18%
                       </span>
                     </div>
-                    <div className="text-3xl font-bold text-gray-900">150+</div>
-                    <div className="text-gray-600">Happy Clients</div>
+                    <div className="text-2xl sm:text-3xl font-bold text-gray-900">150+</div>
+                    <div className="text-xs sm:text-sm text-gray-600">Happy Clients</div>
                   </div>
-                  <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
-                    <div className="flex items-center justify-between mb-4">
-                      <CheckCircle className="h-8 w-8 text-emerald-600" />
-                      <span className="text-sm font-semibold text-emerald-600 bg-emerald-100 px-2 py-1 rounded-full">
+                  <div className="bg-white rounded-xl p-4 sm:p-6 shadow-sm border border-gray-100">
+                    <div className="flex items-center justify-between mb-3 sm:mb-4">
+                      <CheckCircle className="h-6 w-6 sm:h-8 sm:w-8 text-emerald-600" />
+                      <span className="text-xs sm:text-sm font-semibold text-emerald-600 bg-emerald-100 px-2 py-1 rounded-full">
                         99.9%
                       </span>
                     </div>
-                    <div className="text-3xl font-bold text-gray-900">24/7</div>
-                    <div className="text-gray-600">Uptime</div>
+                    <div className="text-2xl sm:text-3xl font-bold text-gray-900">24/7</div>
+                    <div className="text-xs sm:text-sm text-gray-600">Uptime</div>
                   </div>
                 </div>
 
                 {/* Chart Section */}
-                <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
-                  <div className="flex items-center justify-between mb-6">
-                    <h4 className="text-lg font-semibold text-gray-900">Development Progress</h4>
+                <div className="bg-white rounded-xl p-4 sm:p-6 shadow-sm border border-gray-100">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-4 sm:mb-6 gap-2 sm:gap-0">
+                    <h4 className="text-base sm:text-lg font-semibold text-gray-900">Development Progress</h4>
                     <div className="flex items-center space-x-2">
-                      <div className="w-3 h-3 bg-emerald-500 rounded-full"></div>
-                      <span className="text-sm text-gray-600">Real-time updates</span>
+                      <div className="w-2 sm:w-3 h-2 sm:h-3 bg-emerald-500 rounded-full"></div>
+                      <span className="text-xs sm:text-sm text-gray-600">Real-time updates</span>
                     </div>
                   </div>
-                  <div className="h-32 bg-gradient-to-r from-emerald-50 to-teal-50 rounded-lg flex items-end justify-between px-6 pb-4">
+                  <div className="h-24 sm:h-32 bg-gradient-to-r from-emerald-50 to-teal-50 rounded-lg flex items-end justify-between px-4 sm:px-6 pb-3 sm:pb-4">
                     <div
-                      className="w-8 bg-gradient-to-t from-emerald-500 to-emerald-400 rounded-t-lg"
+                      className="w-6 sm:w-8 bg-gradient-to-t from-emerald-500 to-emerald-400 rounded-t-lg"
                       style={{ height: "60%" }}
                     ></div>
                     <div
-                      className="w-8 bg-gradient-to-t from-teal-500 to-teal-400 rounded-t-lg"
+                      className="w-6 sm:w-8 bg-gradient-to-t from-teal-500 to-teal-400 rounded-t-lg"
                       style={{ height: "80%" }}
                     ></div>
                     <div
-                      className="w-8 bg-gradient-to-t from-emerald-600 to-emerald-500 rounded-t-lg"
+                      className="w-6 sm:w-8 bg-gradient-to-t from-emerald-600 to-emerald-500 rounded-t-lg"
                       style={{ height: "45%" }}
                     ></div>
                     <div
-                      className="w-8 bg-gradient-to-t from-cyan-500 to-cyan-400 rounded-t-lg"
+                      className="w-6 sm:w-8 bg-gradient-to-t from-cyan-500 to-cyan-400 rounded-t-lg"
                       style={{ height: "90%" }}
                     ></div>
                     <div
-                      className="w-8 bg-gradient-to-t from-teal-600 to-teal-500 rounded-t-lg"
+                      className="w-6 sm:w-8 bg-gradient-to-t from-teal-600 to-teal-500 rounded-t-lg"
                       style={{ height: "70%" }}
                     ></div>
                     <div
-                      className="w-8 bg-gradient-to-t from-emerald-500 to-emerald-400 rounded-t-lg"
+                      className="w-6 sm:w-8 bg-gradient-to-t from-emerald-500 to-emerald-400 rounded-t-lg"
                       style={{ height: "85%" }}
                     ></div>
                   </div>
