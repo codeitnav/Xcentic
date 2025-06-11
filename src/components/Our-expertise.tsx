@@ -48,6 +48,12 @@ const OurExpertise = () => {
     if (container) {
       container.style.scrollBehavior = "smooth"; // Add smooth scrolling
       container.addEventListener("scroll", handleScroll);
+      // Ensure touch scrolling works on mobile
+      (
+        container.style as CSSStyleDeclaration & {
+          webkitOverflowScrolling: string;
+        }
+      ).webkitOverflowScrolling = "touch";
     }
 
     return () => {
@@ -158,7 +164,6 @@ const OurExpertise = () => {
           className="w-full mx-auto rounded-[40px] overflow-hidden shadow-xl relative"
           style={{
             border: "3px solid black",
-            margin: "0 20px",
             height: "70vh",
           }}
         >
@@ -220,8 +225,8 @@ const OurExpertise = () => {
                 </motion.div>
               </div>
 
-              {/* Right Content - Image */}
-              <div className="flex items-center justify-center">
+              {/* Right Content - Image (Hidden on small screens) */}
+              <div className="hidden lg:flex items-center justify-center">
                 <motion.div
                   key={`image-${activeIndex}`}
                   initial={{ opacity: 0, scale: 0.9 }}
@@ -231,7 +236,8 @@ const OurExpertise = () => {
                 >
                   <Image
                     src={
-                      expertiseContent[activeIndex].image || "/placeholder.svg"
+                      expertiseContent[activeIndex].image ||
+                      "/placeholder.svg?height=320&width=400"
                     }
                     alt={expertiseContent[activeIndex].title}
                     fill
@@ -267,8 +273,12 @@ const OurExpertise = () => {
           {/* Invisible Scroll Area */}
           <div
             ref={scrollContainerRef}
-            className="absolute inset-0 overflow-y-auto opacity-0 cursor-pointer"
-            style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+            className="absolute inset-0 overflow-y-auto opacity-0 cursor-pointer touch-pan-y"
+            style={{
+              scrollbarWidth: "none",
+              msOverflowStyle: "none",
+              WebkitOverflowScrolling: "touch",
+            }}
           >
             <div style={{ height: `${expertiseContent.length * 100}vh` }}>
               {/* This creates the scrollable area */}
@@ -339,6 +349,11 @@ const OurExpertise = () => {
         }
         .delay-1000 {
           animation-delay: 1s;
+        }
+
+        /* Ensure scrolling works on mobile devices */
+        .touch-pan-y {
+          touch-action: pan-y;
         }
       `}</style>
     </section>
