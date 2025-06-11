@@ -112,8 +112,10 @@ const HeroSection = () => {
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8 sm:mb-16 px-4 sm:px-0">
             <button className="group bg-black hover:bg-gray-800 text-white px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-lg font-semibold text-sm sm:text-base md:text-lg transition-all duration-300 hover:scale-105 hover:shadow-xl flex items-center justify-center space-x-3">
-              <span>Consult Our Experts</span>
+              <a href="#footer">
+              <span>Consult Our Experts</span></a>
               <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5 transition-transform group-hover:translate-x-1" />
+              
             </button>
           </div>
 
