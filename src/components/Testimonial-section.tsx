@@ -142,7 +142,7 @@ export default function TestimonialSection() {
 
         {/* Header */}
         <div className="text-center mb-12">
-          <h2 className="text-5xl font-bold tracking-tight mb-4">Words of Appreciation</h2>
+          <h2 className="text-4xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight mb-4">Words of Appreciation</h2>
           <div className="h-1 w-40 bg-black mx-auto mt-5 mb-4"></div>
           <p className="text-gray-600 max-w-2xl mx-auto">
             Discover how businesses across industries have transformed their operations with Xcentic&apos;s cutting-edge

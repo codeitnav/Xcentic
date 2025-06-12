@@ -54,7 +54,7 @@ const ServiceSection = () => {
       </div>
 
          <div className="text-center mb-12">
-          <h2 className="text-5xl font-bold tracking-tight mb-4">Our Services</h2>
+          <h2 className="text-4xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight mb-4">Our Services</h2>
           <div className="h-1 w-40 bg-black mx-auto mt-6 mb-4"></div>
           <p className="text-black max-w-2xl mx-auto">
             Discover how our specialized expertise across multiple domains can transform your business and drive

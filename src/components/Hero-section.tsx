@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { ArrowRight, TrendingUp, Users, CheckCircle, BarChart3 } from "lucide-react"
+import { ArrowRight, TrendingUp, Users, CheckCircle, BarChart3 } from 'lucide-react'
 
 const HeroSection = () => {
   const [isVisible, setIsVisible] = useState(false)
@@ -20,7 +20,7 @@ const HeroSection = () => {
   }, [])
 
   return (
-    <section id="home" className="min-h-screen bg-gray-50 relative overflow-hidden flex items-center py-25 w-full">
+    <section id="home" className="min-h-screen bg-gray-50 relative overflow-hidden flex items-center py-25 w-full mt-16 sm:mt-0">
       {/* Floating Geometric Elements - Hidden on small mobile screens */}
       <div className="absolute inset-0 overflow-hidden hidden sm:block">
         {/* Top Left Elements */}
@@ -90,12 +90,12 @@ const HeroSection = () => {
         ></div>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 text-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-4 md:px-6 lg:px-8 text-center">
         <div
           className={`transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
         >
           {/* Main Headline */}
-          <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight px-2 sm:px-0">
+          <h1 className="text-4xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight px-2 sm:px-0">
             Driving the Future of
             <br />
             <span className="bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600 bg-clip-text text-transparent">
@@ -159,7 +159,7 @@ const HeroSection = () => {
                 </div>
 
                 {/* Stats Grid */}
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3 md:gap-4 lg:gap-6 mb-6 sm:mb-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3 md:gap-4 lg:gap-6 mb-6 sm:mb-8">
                   <div className="bg-white rounded-xl p-3 sm:p-4 md:p-5 lg:p-6 shadow-sm border border-gray-100">
                     <div className="flex items-center justify-between mb-3 sm:mb-4">
                       <BarChart3 className="h-6 w-6 sm:h-8 sm:w-8 text-emerald-600" />
@@ -231,11 +231,11 @@ const HeroSection = () => {
                       style={{ height: "90%" }}
                     ></div>
                     <div
-                      className="w-6 sm:w-8 bg-gradient-to-t from-teal-600 to-teal-500 rounded-t-lg"
+                      className="w-6 sm:w-8 bg-gradient-to-t from-teal-600 to-teal-500 rounded-t-lg hidden sm:block"
                       style={{ height: "70%" }}
                     ></div>
                     <div
-                      className="w-6 sm:w-8 bg-gradient-to-t from-emerald-500 to-emerald-400 rounded-t-lg"
+                      className="w-6 sm:w-8 bg-gradient-to-t from-emerald-500 to-emerald-400 rounded-t-lg hidden sm:block"
                       style={{ height: "85%" }}
                     ></div>
                   </div>
