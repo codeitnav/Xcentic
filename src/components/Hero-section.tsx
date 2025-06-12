@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { ArrowRight, TrendingUp, Users, CheckCircle, BarChart3 } from 'lucide-react'
+import { ArrowRight, TrendingUp, Users, CheckCircle, BarChart3 } from "lucide-react"
 
 const HeroSection = () => {
   const [isVisible, setIsVisible] = useState(false)
@@ -20,7 +20,10 @@ const HeroSection = () => {
   }, [])
 
   return (
-    <section id="home" className="min-h-screen bg-gray-50 relative overflow-hidden flex items-center py-25 w-full mt-16 sm:mt-0">
+    <section
+      id="home"
+      className="min-h-screen bg-gray-50 relative overflow-hidden flex items-center py-25 w-full mt-16 sm:mt-0"
+    >
       {/* Floating Geometric Elements - Hidden on small mobile screens */}
       <div className="absolute inset-0 overflow-hidden hidden sm:block">
         {/* Top Left Elements */}
@@ -90,12 +93,12 @@ const HeroSection = () => {
         ></div>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-4 md:px-6 lg:px-8 text-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 text-center">
         <div
           className={`transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
         >
           {/* Main Headline */}
-          <h1 className="text-4xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight px-2 sm:px-0">
+          <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight px-2 sm:px-0">
             Driving the Future of
             <br />
             <span className="bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600 bg-clip-text text-transparent">
@@ -113,26 +116,26 @@ const HeroSection = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8 sm:mb-16 px-4 sm:px-0">
             <button className="group bg-black hover:bg-gray-800 text-white px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-lg font-semibold text-sm sm:text-base md:text-lg transition-all duration-300 hover:scale-105 hover:shadow-xl flex items-center justify-center space-x-3">
               <a href="#footer">
-              <span>Consult Our Experts</span></a>
+                <span>Consult Our Experts</span>
+              </a>
               <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5 transition-transform group-hover:translate-x-1" />
-              
             </button>
           </div>
 
           {/* Dashboard Mockup */}
           <div
-            className={`relative max-w-5xl mx-auto transition-all duration-1200 delay-300 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"}`}
+            className={`relative max-w-5xl mx-auto px-2 sm:px-0 transition-all duration-1200 delay-300 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"}`}
           >
             {/* Browser Frame */}
             <div className="bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden">
               {/* Browser Header */}
-              <div className="bg-gray-100 px-6 py-4 flex items-center justify-between border-b border-gray-200">
+              <div className="px-2 sm:px-6 py-2 sm:py-4 flex items-center justify-between bg-gray-100 border-b border-gray-200">
                 <div className="flex space-x-2">
                   <div className="w-3 h-3 bg-red-400 rounded-full"></div>
                   <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
                   <div className="w-3 h-3 bg-green-400 rounded-full"></div>
                 </div>
-                <div className="flex-1 mx-2 sm:mx-4 md:mx-6 bg-white rounded-lg px-2 sm:px-3 md:px-4 py-1 sm:py-2 text-sm text-gray-600 border border-gray-200">
+                <div className="mx-1 sm:mx-4 md:mx-6 bg-white rounded-lg px-1 sm:px-3 md:px-4 py-1 sm:py-2 text-xs sm:text-sm text-gray-600 border border-gray-200">
                   https://app.xcentic.com/dashboard
                 </div>
                 <div className="flex space-x-2">
@@ -142,9 +145,9 @@ const HeroSection = () => {
               </div>
 
               {/* Dashboard Content */}
-              <div className="bg-gradient-to-br from-gray-50 to-white p-3 sm:p-4 md:p-6 lg:p-8">
+              <div className="bg-gradient-to-br from-gray-50 to-white p-2 sm:p-4 md:p-6 lg:p-8">
                 {/* Dashboard Header */}
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-6 sm:mb-8 gap-4 sm:gap-0">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-4 sm:mb-8 gap-2 sm:gap-4">
                   <div>
                     <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900">Project Dashboard</h3>
                     <p className="text-xs sm:text-sm md:text-base text-gray-600">Real-time development insights</p>
@@ -159,8 +162,8 @@ const HeroSection = () => {
                 </div>
 
                 {/* Stats Grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3 md:gap-4 lg:gap-6 mb-6 sm:mb-8">
-                  <div className="bg-white rounded-xl p-3 sm:p-4 md:p-5 lg:p-6 shadow-sm border border-gray-100">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 sm:gap-3 md:gap-4 lg:gap-6 mb-6 sm:mb-8">
+                  <div className="bg-white rounded-xl p-4 sm:p-4 md:p-5 lg:p-6 shadow-sm border border-gray-100">
                     <div className="flex items-center justify-between mb-3 sm:mb-4">
                       <BarChart3 className="h-6 w-6 sm:h-8 sm:w-8 text-emerald-600" />
                       <span className="text-xs md:text-sm font-semibold text-emerald-600 bg-emerald-100 px-2 py-1 rounded-full">
@@ -170,7 +173,7 @@ const HeroSection = () => {
                     <div className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900">500+</div>
                     <div className="text-xs md:text-sm text-gray-600">Projects Delivered</div>
                   </div>
-                  <div className="bg-white rounded-xl p-3 sm:p-4 md:p-5 lg:p-6 shadow-sm border border-gray-100">
+                  <div className="bg-white rounded-xl p-4 sm:p-4 md:p-5 lg:p-6 shadow-sm border border-gray-100">
                     <div className="flex items-center justify-between mb-3 sm:mb-4">
                       <TrendingUp className="h-6 w-6 sm:h-8 sm:w-8 text-blue-600" />
                       <span className="text-xs md:text-sm font-semibold text-blue-600 bg-blue-100 px-2 py-1 rounded-full">
@@ -180,7 +183,7 @@ const HeroSection = () => {
                     <div className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900">98.5%</div>
                     <div className="text-xs md:text-sm text-gray-600">Client Satisfaction</div>
                   </div>
-                  <div className="bg-white rounded-xl p-3 sm:p-4 md:p-5 lg:p-6 shadow-sm border border-gray-100">
+                  <div className="bg-white rounded-xl p-4 sm:p-4 md:p-5 lg:p-6 shadow-sm border border-gray-100">
                     <div className="flex items-center justify-between mb-3 sm:mb-4">
                       <Users className="h-6 w-6 sm:h-8 sm:w-8 text-purple-600" />
                       <span className="text-xs md:text-sm font-semibold text-purple-600 bg-purple-100 px-2 py-1 rounded-full">
@@ -190,7 +193,7 @@ const HeroSection = () => {
                     <div className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900">150+</div>
                     <div className="text-xs md:text-sm text-gray-600">Happy Clients</div>
                   </div>
-                  <div className="bg-white rounded-xl p-3 sm:p-4 md:p-5 lg:p-6 shadow-sm border border-gray-100">
+                  <div className="bg-white rounded-xl p-4 sm:p-4 md:p-5 lg:p-6 shadow-sm border border-gray-100">
                     <div className="flex items-center justify-between mb-3 sm:mb-4">
                       <CheckCircle className="h-6 w-6 sm:h-8 sm:w-8 text-emerald-600" />
                       <span className="text-xs md:text-sm font-semibold text-emerald-600 bg-emerald-100 px-2 py-1 rounded-full">
@@ -213,7 +216,7 @@ const HeroSection = () => {
                       <span className="text-xs sm:text-sm text-gray-600">Real-time updates</span>
                     </div>
                   </div>
-                  <div className="h-24 sm:h-32 bg-gradient-to-r from-emerald-50 to-teal-50 rounded-lg flex items-end justify-between px-3 sm:px-4 md:px-5 lg:px-6 pb-2 sm:pb-3 md:pb-4">
+                  <div className="h-24 sm:h-32 bg-gradient-to-r from-emerald-50 to-teal-50 rounded-lg flex items-end justify-between px-2 sm:px-4 md:px-5 lg:px-6 pb-2 sm:pb-3 md:pb-4">
                     <div
                       className="w-6 sm:w-8 bg-gradient-to-t from-emerald-500 to-emerald-400 rounded-t-lg"
                       style={{ height: "60%" }}
