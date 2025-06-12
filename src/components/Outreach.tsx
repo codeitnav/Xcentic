@@ -11,7 +11,7 @@ export default function Outreach() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
             <div className="space-y-6">
-              <h2 className="text-4xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight mb-3">Global Outreach</h2>
+              <h2 className="text-4xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-5xl font-bold tracking-tight mb-3">Global Outreach</h2>
               <div className="h-1 w-20 bg-black mb-3"></div>
 
               <p className="text-sm sm:text-base text-gray-700 leading-relaxed">

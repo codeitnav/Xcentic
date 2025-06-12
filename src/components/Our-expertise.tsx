@@ -65,7 +65,7 @@ const OurExpertise = () => {
   return (
     <section
       id="expertise"
-      className="w-full overflow-x-hidden py-20 px-4 md:px-6 lg:px-8 bg-white relative"
+      className="w-full overflow-x-hidden py-20 px-4 md:px-6 lg:px-8 relative"
     >
       {/* Floating Geometric Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none hidden md:block">
@@ -150,7 +150,7 @@ const OurExpertise = () => {
 
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-12">
-          <h2 className="text-4xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight mb-4">
+          <h2 className="text-4xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-5xl font-bold tracking-tight mb-4">
             Our Expertise
           </h2>
           <div className="h-1 w-40 bg-black mx-auto mt-6 mb-4"></div>
