@@ -1,9 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import {
-  ArrowRight,
-} from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import ProjectDashboard from "./ProjectDashboard";
 import { ContactForm } from "@/components/Contact-form";
 
@@ -27,7 +25,7 @@ const HeroSection = () => {
   return (
     <section
       id="home"
-      className="min-h-screen bg-gray-50 relative overflow-hidden flex items-center py-25 w-full mt-16 sm:mt-0"
+      className="min-h-screen bg-gray-50 relative overflow-hidden flex items-center w-full mt-10 sm:mt-0 px-4 sm:px-6 md:px-12 lg:px-20 xl:px-32 py-6 sm:py-16 lg:py-24"
     >
       {/* Floating Geometric Elements - Hidden on small mobile screens */}
       <div className="absolute inset-0 overflow-hidden hidden sm:block">
@@ -105,31 +103,30 @@ const HeroSection = () => {
           }`}
         >
           {/* Main Headline */}
-          <h1 className="mt-4 sm:-mt-2 md:-mt-4 lg:-mt-6 text-4xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-7xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight px-2 sm:px-0">
+          <h1 className="mt-6 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight max-w-3xl mx-auto px-4 sm:px-0 text-center">
             Driving the Future of
             <br />
-            <span className="bg-gradient-to-r xl:text-7xl from-emerald-600 via-teal-600 to-cyan-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600 bg-clip-text text-transparent">
               Global Innovation
             </span>
           </h1>
 
           {/* Subtitle */}
-          <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-1xl text-gray-600 mb-4 sm:mb-6 max-w-4xl mx-auto leading-relaxed px-4 sm:px-0">
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-6 max-w-2xl mx-auto leading-relaxed px-4 sm:px-0 text-center">
             We drive transformative growth by crafting cutting-edge digital
-            solutions that turn complex challenges into competitive
-            advantages—fueling innovation, agility, and resilience at every
-            step.
+            solutions that turn complex challenges into competitive advantages—
+            fueling innovation, agility, and resilience at every step.
           </p>
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8 sm:mb-16 px-4 sm:px-0">
             <button
-            onClick={() => setShowContactForm(true)}
-            className="group bg-black hover:bg-gray-800 text-white px-3 sm:px-4 md:px-5 py-1.5 sm:py-2 md:py-2.5 rounded-lg font-semibold text-xs sm:text-sm md:text-base transition-all duration-300 hover:scale-105 hover:shadow-xl flex items-center justify-center space-x-2"
-          >
+              onClick={() => setShowContactForm(true)}
+              className="group bg-black hover:bg-gray-800 text-white px-3 sm:px-4 md:px-5 py-1.5 sm:py-2 md:py-2.5 rounded-lg font-semibold text-xs sm:text-sm md:text-base transition-all duration-300 hover:scale-105 hover:shadow-xl flex items-center justify-center space-x-2"
+            >
               <span>Consult Our Experts</span>
-            <ArrowRight className="h-3 w-3 sm:h-4 sm:w-4 transition-transform group-hover:translate-x-1" />
-          </button>
+              <ArrowRight className="h-3 w-3 sm:h-4 sm:w-4 transition-transform group-hover:translate-x-1" />
+            </button>
           </div>
 
           {/* Dashboard Mockup - Removed max-width constraint and made it full width */}
@@ -157,14 +154,13 @@ const HeroSection = () => {
                   <div className="w-6 h-6 bg-gray-300 rounded"></div>
                 </div>
               </div>
-          
 
               {/* Dashboard Content */}
               <ProjectDashboard />
             </div>
-            </div>
           </div>
-          </div>
+        </div>
+      </div>
 
       {/* Custom CSS for animations */}
       <style jsx>{`
@@ -208,10 +204,11 @@ const HeroSection = () => {
           animation-delay: 1s;
         }
       `}</style>
-    
-    {showContactForm && <ContactForm onClose={() => setShowContactForm(false)} />}
-    </section>
 
+      {showContactForm && (
+        <ContactForm onClose={() => setShowContactForm(false)} />
+      )}
+    </section>
   );
 };
 
