@@ -103,19 +103,20 @@ const HeroSection = () => {
           }`}
         >
           {/* Main Headline */}
-          <h1 className="mt-6 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight max-w-3xl mx-auto px-4 sm:px-0 text-center">
+          <h1 className="mt-4 md:-mt-4 lg:-mt-6 text-5xl sm:text-5xl md:text-5xl lg:text-5xl xl:text-7xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight px-2 sm:px-0 mx-auto text-center ">
             Driving the Future of
             <br />
-            <span className="bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r xl:text-7xl from-emerald-600 via-teal-600 to-cyan-600 bg-clip-text text-transparent">
               Global Innovation
             </span>
           </h1>
 
           {/* Subtitle */}
-          <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-6 max-w-2xl mx-auto leading-relaxed px-4 sm:px-0 text-center">
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-1xl text-gray-600 mb-4 sm:mb-6 max-w-4xl mx-auto leading-relaxed px-4 sm:px-0">
             We drive transformative growth by crafting cutting-edge digital
-            solutions that turn complex challenges into competitive advantages—
-            fueling innovation, agility, and resilience at every step.
+            solutions that turn complex challenges into competitive
+            advantages—fueling innovation, agility, and resilience at every
+            step.
           </p>
 
           {/* CTA Buttons */}
