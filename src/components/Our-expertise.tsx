@@ -65,7 +65,7 @@ const OurExpertise = () => {
   return (
     <section
       id="expertise"
-      className="w-full overflow-x-hidden py-10 px-4 md:px-6 lg:px-8 relative"
+      className="relative w-full py-15 scroll-mt-24 px-4 md:px-6 lg:px-8"
     >
       {/* Floating Geometric Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none hidden md:block">

@@ -1,76 +1,83 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import Link from "next/link"
-import { Menu, X } from "lucide-react"
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import { Menu, X } from "lucide-react";
+import { useMemo } from "react";
 
 interface NavItem {
-  name: string
-  href: string
+  name: string;
+  href: string;
 }
 
 const Navbar = () => {
-  const [isScrolled, setIsScrolled] = useState(false)
-  const [activeSection, setActiveSection] = useState("home")
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  const navItems: NavItem[] = [
-    { name: "Home", href: "#home" },
-    { name: "Our Services", href: "#services" },
-    { name: "Expertise", href: "#expertise" },
-    { name: "Resources", href: "#resources" },
-    { name: "Blog", href: "#blog" },
-    { name: "Portfolio", href: "#portfolio" },
-  ]
+  const navItems: NavItem[] = useMemo(
+    () => [
+      { name: "Home", href: "#home" },
+      { name: "Our Services", href: "#services" },
+      { name: "Expertise", href: "#expertise" },
+      { name: "Resources", href: "#resources" },
+      { name: "Blog", href: "#blog" },
+      { name: "Portfolio", href: "#portfolio" },
+    ],
+    []
+  );
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollPosition = window.scrollY
-      setIsScrolled(scrollPosition > 50)
-    }
+      const scrollPosition = window.scrollY;
+      setIsScrolled(scrollPosition > 50);
+    };
 
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   useEffect(() => {
     const handleActiveSection = () => {
-      const sections = navItems.map((item) => item.href.substring(1))
-      const scrollPosition = window.scrollY + 100
+      const sections = navItems.map((item) => item.href.substring(1));
+      const scrollPosition = window.scrollY + 100;
 
       for (const section of sections) {
-        const element = document.getElementById(section)
+        const element = document.getElementById(section);
         if (element) {
-          const offsetTop = element.offsetTop
-          const offsetHeight = element.offsetHeight
+          const offsetTop = element.offsetTop;
+          const offsetHeight = element.offsetHeight;
 
-          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
-            setActiveSection(section)
-            break
+          if (
+            scrollPosition >= offsetTop &&
+            scrollPosition < offsetTop + offsetHeight
+          ) {
+            setActiveSection(section);
+            break;
           }
         }
       }
-    }
+    };
 
-    window.addEventListener("scroll", handleActiveSection)
-    return () => window.removeEventListener("scroll", handleActiveSection)
-  }, [navItems])
+    window.addEventListener("scroll", handleActiveSection);
+    return () => window.removeEventListener("scroll", handleActiveSection);
+  }, [navItems]);
 
   const handleNavClick = (href: string) => {
-    setIsMobileMenuOpen(false)
-    const element = document.querySelector(href)
+    setIsMobileMenuOpen(false);
+    const element = document.querySelector(href);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" })
+      element.scrollIntoView({ behavior: "smooth" });
     }
-  }
+  };
 
   return (
     <div className="fixed top-0 left-0 right-0 xl:left-52 xl:right-52 2xl:left-64 2xl:right-64 z-50 px-4 sm:px-6 lg:px-8 pt-2 sm:pt-3">
       <nav
         className={`transition-all duration-700 ease-out rounded-xl sm:rounded-2xl ${
           isScrolled
-            ? "bg-white/10 backdrop-blur-3xl border border-white/30 shadow-xl shadow-black/10 py-2"
-            : "bg-white/5 backdrop-blur-3xl border border-white/20 shadow-md shadow-black/5 py-2.5"
+            ? "bg-emerald-600/20 backdrop-blur-3xl border border-white/30 shadow-xl shadow-black/10 py-2"
+            : "bg-emerald-600/10 backdrop-blur-3xl border border-white/20 shadow-md shadow-black/5 py-2.5"
         }`}
         style={{
           backdropFilter: "blur(30px)",
@@ -96,8 +103,8 @@ const Navbar = () => {
             <div className="hidden lg:flex items-center justify-center flex-1 mx-8">
               <div className="flex items-center space-x-1 xl:space-x-2">
                 {navItems.map((item) => {
-                  const sectionId = item.href.substring(1)
-                  const isActive = activeSection === sectionId
+                  const sectionId = item.href.substring(1);
+                  const isActive = activeSection === sectionId;
 
                   return (
                     <button
@@ -116,7 +123,7 @@ const Navbar = () => {
                         }`}
                       ></span>
                     </button>
-                  )
+                  );
                 })}
               </div>
             </div>
@@ -126,14 +133,18 @@ const Navbar = () => {
               <button
                 onClick={() => handleNavClick("#footer")}
                 className={`relative overflow-hidden bg-gray-900/85 text-white hover:bg-gray-800/90 transition-all duration-300 rounded-full font-semibold border border-gray-700/30 shadow-md shadow-gray-900/20 hover:scale-105 ${
-                  isScrolled ? "px-3 sm:px-4 py-1.5 text-xs sm:text-sm" : "px-4 sm:px-5 py-2 text-sm"
+                  isScrolled
+                    ? "px-3 sm:px-4 py-1.5 text-xs sm:text-sm"
+                    : "px-4 sm:px-5 py-2 text-sm"
                 }`}
                 style={{
                   backdropFilter: "blur(16px)",
                   WebkitBackdropFilter: "blur(16px)",
                 }}
               >
-                <span className="relative z-10 whitespace-nowrap">Contact Us</span>
+                <span className="relative z-10 whitespace-nowrap">
+                  Contact Us
+                </span>
               </button>
 
               <button
@@ -158,7 +169,9 @@ const Navbar = () => {
           {/* Mobile Navigation */}
           <div
             className={`lg:hidden transition-all duration-500 overflow-hidden ${
-              isMobileMenuOpen ? "max-h-96 opacity-100 mt-4" : "max-h-0 opacity-0 mt-0"
+              isMobileMenuOpen
+                ? "max-h-96 opacity-100 mt-4"
+                : "max-h-0 opacity-0 mt-0"
             }`}
           >
             <div
@@ -169,8 +182,8 @@ const Navbar = () => {
               }}
             >
               {navItems.map((item, index) => {
-                const sectionId = item.href.substring(1)
-                const isActive = activeSection === sectionId
+                const sectionId = item.href.substring(1);
+                const isActive = activeSection === sectionId;
 
                 return (
                   <button
@@ -183,12 +196,14 @@ const Navbar = () => {
                     }`}
                     style={{
                       animationDelay: `${index * 40}ms`,
-                      animation: isMobileMenuOpen ? "slideInUp 0.4s ease-out forwards" : "none",
+                      animation: isMobileMenuOpen
+                        ? "slideInUp 0.4s ease-out forwards"
+                        : "none",
                     }}
                   >
                     {item.name}
                   </button>
-                )
+                );
               })}
             </div>
           </div>
@@ -208,7 +223,7 @@ const Navbar = () => {
         }
       `}</style>
     </div>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

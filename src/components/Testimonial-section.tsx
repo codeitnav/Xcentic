@@ -1,80 +1,72 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { ChevronLeft, ChevronRight, Star } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
-import Image from "next/image";
 
 interface Testimonial {
   id: number;
   name: string;
   position: string;
-  company: string;
-  image: string;
-  rating: number;
   quote: string;
 }
 
 const testimonials: Testimonial[] = [
   {
     id: 1,
-    name: "Sarah Mitchell",
-    position: "Chief Technology Officer",
-    company: "TechFlow Solutions",
-    image: "/testimonial.jpg",
-    rating: 5,
+    name: "Anjali Mehta",
+    position: "Founder",
     quote:
-      "Xcentic's AI implementation transformed our entire data processing pipeline. What used to take hours now happens in minutes, and the accuracy has improved by 40%.",
+      "Before I started using Xcentic's e-commerce solution, I was running my business through WhatsApp and Instagram DMs. Order management was chaotic, and I often missed follow-ups. After launching my store through their platform, the difference has been huge. The dashboard is so easy to use—even someone with no tech background like me can manage everything. From adding products, tracking orders, to managing payments—it's all seamless now. My customers love the user experience, and I've started receiving online orders from cities I never expected! Xcentic's support team is always available, and they guided me through every step. I truly feel like I've taken my business to the next level.",
   },
   {
     id: 2,
-    name: "Michael Rodriguez",
-    position: "Digital Transformation Lead",
-    company: "Global Manufacturing Corp",
-    image: "/testimonial.jpg",
-    rating: 5,
+    name: "Imran Qureshi",
+    position: "Founder",
     quote:
-      "The cloud migration strategy Xcentic designed for us was flawless. Zero downtime during transition, 60% cost reduction, and our systems are now more secure and scalable than ever before.",
+      "We used to manage bookings manually—drivers would call in for ride confirmations, and we had to coordinate everything over the phone. It was stressful and prone to errors. Then we worked with Xcentic to develop a proper taxi app with separate driver and customer interfaces. Now, everything is automated: ride requests, driver allocation, GPS tracking, fare calculation, and even digital payments. Passengers find it more professional, and our team gets live insights into daily operations. What impressed me most was the customisation—Xcentic added features specific to our city needs. We've grown our fleet and improved our brand image drastically. Truly a turning point for our business",
   },
   {
     id: 3,
-    name: "Dr. Priya Sharma",
-    position: "Head of Innovation",
-    company: "HealthTech Innovations",
-    image: "/testimonial.jpg",
-    rating: 5,
+    name: "Sonal Agarwal",
+    position: "CFO",
     quote:
-      "Xcentic's blockchain solution revolutionized our patient data management. We now have complete transparency, enhanced security, and compliance with all healthcare regulations.",
+      "Running a growing company without a proper system was becoming a challenge. Our HR, accounts, inventory, and project teams were all using different tools, which caused confusion and delays. Xcentic designed a custom ERP for us that brought everything under one roof. Now, every department is connected. I can track stock, view financial reports, monitor project status, and even process employee payroll—all from a single platform. The system has cut down our manual work by 50% and errors have reduced drastically. What I really appreciate is how the team took the time to understand our business before building the system. It feels like the ERP was made just for us",
   },
   {
     id: 4,
-    name: "James Wilson",
-    position: "VP of Operations",
-    company: "RetailMax Enterprise",
-    image: "/testimonial.jpg",
-    rating: 4.5,
+    name: "Nitesh Malhotra",
+    position: "Sales Manager",
     quote:
-      "The IoT integration Xcentic delivered connected all our stores seamlessly. Real-time inventory tracking, predictive maintenance, and automated reordering have increased our efficiency by 35%.",
+      "Our sales process was completely manual—we relied on Excel sheets and scattered WhatsApp messages. Leads were getting lost, follow-ups were missed, and we couldn't track team performance. That's when we switched to the CRM system provided by Xcentic. Everything changed after that. We now have a single platform where all leads are tracked, categorized, and followed up on time. The automation helps send reminders, the dashboard gives complete visibility, and management can finally see real-time progress. It's like we've gone from playing blindfolded to working with a GPS. I'm grateful to Xcentic for transforming our sales workflow so efficiently.",
   },
   {
     id: 5,
-    name: "Elena Chen",
-    position: "Chief Executive Officer",
-    company: "FinanceForward Inc",
-    image: "/testimonial.jpg",
-    rating: 5,
+    name: "Neha Arora",
+    position: "Co-Founder",
     quote:
-      "Xcentic's business intelligence platform gave us insights we never knew existed. Data-driven decision making is now at the core of our strategy, resulting in 25% revenue growth this quarter.",
+      "We were looking for more than just an online store—we needed a system that could handle bulk orders, easy logistics integration, and customer communication in one place. Xcentic delivered exactly that. The store looks premium, works flawlessly on mobile, and is super easy for my team to manage. We're now getting repeat orders from international clients as well. Honestly, it feels like we've moved from a local business to a global brand, all thanks to their platform",
   },
   {
     id: 6,
-    name: "David Kumar",
-    position: "Innovation Director",
-    company: "Smart Cities Ltd",
-    image: "/testimonial.jpg",
-    rating: 5,
+    name: "Pradeep Kumar",
+    position: "Founder",
     quote:
-      "The AR/VR solutions Xcentic created for our urban planning projects are incredible. Stakeholders can now visualize developments in immersive 3D, making approvals 50% faster.",
+      "Before working with Xcentic, we were running live classes over Zoom and sharing notes via WhatsApp. It was messy and not scalable. Their team built a custom learning platform with course modules, student dashboards, progress tracking, and integrated payment gateways. Today, we serve 10,000+ students across India with ease. The platform looks professional, is mobile-friendly, and has helped us build strong student retention. We finally feel like a real EdTech brand.",
+  },
+  {
+    id: 7,
+    name: "Sandeep Verma",
+    position: "Co-Founder",
+    quote:
+      "We wanted a digital ordering system that wasn't dependent on Swiggy/Zomato and gave us full control. Xcentic helped us launch our own ordering site and mobile app with table booking, digital menu, UPI payments, and loyalty rewards. Our direct orders went up by 70%, and we save on commission charges. Plus, regulars love the new user experience. It's like having our own Swiggy, just better for business.",
+  },
+  {
+    id: 8,
+    name: "Amit Rathi",
+    position: "Site Manager",
+    quote:
+      "We handle multiple sites across cities, and coordination was becoming a nightmare—material delivery updates, worker attendance, progress tracking, all over the place. Xcentic created a simple yet powerful app that lets us update site progress daily, track inventory, and even monitor labor productivity. Our central team now gets live updates from every project site. It has brought discipline and accountability across the board.",
   },
 ];
 
@@ -142,7 +134,7 @@ export default function TestimonialSection() {
   return (
     <section
       id="testimonials"
-      className="py-10 px-4 md:px-6 lg:px-8 relative overflow-hidden bg-gray-50"
+      className="py-15 scroll-mt-24 px-4 md:px-6 lg:px-8 relative overflow-hidden bg-gray-50"
     >
       <div className="max-w-6xl mx-auto">
         {/* Floating Geometric Elements - Hidden on small mobile screens */}
@@ -251,50 +243,29 @@ export default function TestimonialSection() {
           <div className="max-w-md mx-auto">
             <div
               className={cn(
-                "bg-white rounded-3xl shadow-sm p-8 transition-all duration-300 ease-in-out transform",
+                "bg-white rounded-3xl shadow-sm p-6 transition-all duration-300 ease-in-out transform h-[450px] flex flex-col",
                 isTransitioning
                   ? "scale-95 opacity-70"
                   : "scale-100 opacity-100"
               )}
             >
-              <div className="flex flex-col items-center text-center">
-                <div className="relative w-16 h-16 rounded-full overflow-hidden mb-4 mx-auto">
-                  <Image
-                    src={
-                      currentTestimonial.image ||
-                      "/placeholder.svg?height=64&width=64"
-                    }
-                    alt={currentTestimonial.name}
-                    width={64}
-                    height={64}
-                    className="w-full h-full object-cover rounded-full"
-                  />
-                </div>
-                <h3 className="text-xl font-semibold">
+              {/* Header section with fixed spacing */}
+              <div className="flex-shrink-0 text-center mb-4">
+                <h3 className="text-xl font-semibold mb-1">
                   {currentTestimonial.name}
                 </h3>
                 <p className="text-gray-500 text-sm">
-                  {currentTestimonial.position} at {currentTestimonial.company}
+                  {currentTestimonial.position}
                 </p>
-                <div className="flex items-center mt-4 mb-6">
-                  {[...Array(5)].map((_, i) => (
-                    <Star
-                      key={i}
-                      className={cn(
-                        "w-5 h-5",
-                        i < Math.floor(currentTestimonial.rating)
-                          ? "text-yellow-400 fill-yellow-400"
-                          : "text-gray-300"
-                      )}
-                    />
-                  ))}
-                  <span className="ml-2 text-gray-700 font-medium">
-                    {currentTestimonial.rating.toFixed(1)}
-                  </span>
+              </div>
+
+              {/* Quote section with scrollable content */}
+              <div className="flex-1 flex items-start justify-center overflow-hidden">
+                <div className="h-full overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent pr-2">
+                  <p className="text-gray-600 leading-relaxed text-center text-sm">
+                    {currentTestimonial.quote}
+                  </p>
                 </div>
-                <p className="text-gray-600 leading-relaxed">
-                  {currentTestimonial.quote}
-                </p>
               </div>
             </div>
           </div>
