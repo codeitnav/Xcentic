@@ -6,7 +6,6 @@ import {
   Mail,
   Phone,
 } from "lucide-react";
-import Image from "next/image";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();

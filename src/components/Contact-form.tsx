@@ -54,6 +54,7 @@ export const ContactForm = ({ onClose }: ContactFormProps) => {
         })
       }
     } catch (error) {
+      console.error("Contact form submission error:", error)
       setSubmitStatus({
         type: "error",
         message: "Failed to send message. Please try again later.",
