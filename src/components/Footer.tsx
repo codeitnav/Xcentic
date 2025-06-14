@@ -12,7 +12,7 @@ export default function Footer() {
 
   return (
     <section id="footer" style={{ backgroundColor: "#d7f5e9" }}>
-      <footer className="bg-black text-white rounded-t-[50px]">
+      <footer className="bg-black text-white rounded-t-[50px] mx-2 sm:mx-4 lg:mx-8s">
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-12">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
             {/* Brand Section */}
