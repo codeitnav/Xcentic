@@ -270,7 +270,7 @@ export const Card = ({ card, index }: { card: Card; index: number }) => {
                 </span>
               </div>
 
-              {/* Title */}
+              {/* Title */} 
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight mb-2">
                 {card.title}
               </h2>

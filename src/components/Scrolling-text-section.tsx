@@ -2,7 +2,7 @@
 
 export default function ScrollingTextSection() {
   return (
-    <section id="scrolling-text" className="py-16 bg-gray-50 overflow-hidden mb-12">
+    <section id="scrolling-text" className="py-10 bg-gray-50 overflow-hidden mb-12">
       <div className="space-y-4">
         {/* First Line - Moving Left */}
         <div className="relative">

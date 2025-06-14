@@ -54,7 +54,7 @@ const Navbar = () => {
 
     window.addEventListener("scroll", handleActiveSection)
     return () => window.removeEventListener("scroll", handleActiveSection)
-  })
+  }, [navItems])
 
   const handleNavClick = (href: string) => {
     setIsMobileMenuOpen(false)
@@ -65,7 +65,7 @@ const Navbar = () => {
   }
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-50 px-4 sm:px-6 lg:px-8 pt-2 sm:pt-3">
+    <div className="fixed top-0 left-0 right-0 xl:left-52 xl:right-52 2xl:left-64 2xl:right-64 z-50 px-4 sm:px-6 lg:px-8 pt-2 sm:pt-3">
       <nav
         className={`transition-all duration-700 ease-out rounded-xl sm:rounded-2xl ${
           isScrolled
@@ -77,8 +77,9 @@ const Navbar = () => {
           WebkitBackdropFilter: "blur(30px)",
         }}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between">
+        <div className="w-full max-w-none px-2 sm:px-4 lg:px-6">
+          <div className="flex items-center justify-between h-full min-h-[3rem]">
+            {/* Left - Logo */}
             <div className="flex-shrink-0">
               <Link
                 href="/"
@@ -91,46 +92,48 @@ const Navbar = () => {
               </Link>
             </div>
 
-            <div className="hidden lg:flex items-center space-x-2 xl:space-x-4">
-              {navItems.map((item) => {
-                const sectionId = item.href.substring(1)
-                const isActive = activeSection === sectionId
+            {/* Center - Nav Items (Hidden on smaller screens) */}
+            <div className="hidden lg:flex items-center justify-center flex-1 mx-8">
+              <div className="flex items-center space-x-1 xl:space-x-2">
+                {navItems.map((item) => {
+                  const sectionId = item.href.substring(1)
+                  const isActive = activeSection === sectionId
 
-                return (
-                  <button
-                    key={item.name}
-                    onClick={() => handleNavClick(item.href)}
-                    className={`relative px-4 xl:px-5 py-2 text-sm font-medium transition-all duration-300 rounded-full group ${
-                      isActive
-                        ? "text-gray-900 bg-white/25 shadow-md shadow-white/20"
-                        : "text-gray-700 hover:text-gray-900 hover:bg-white/15 hover:shadow-sm hover:shadow-white/10"
-                    }`}
-                  >
-                    <span className="relative z-10">{item.name}</span>
-                    <span
-                      className={`absolute bottom-1 left-1/2 transform -translate-x-1/2 h-0.5 bg-gray-900 transition-all duration-300 rounded-full ${
-                        isActive ? "w-6" : "w-0 group-hover:w-6"
+                  return (
+                    <button
+                      key={item.name}
+                      onClick={() => handleNavClick(item.href)}
+                      className={`relative px-3 xl:px-4 py-2 text-sm font-medium transition-all duration-300 rounded-full group whitespace-nowrap ${
+                        isActive
+                          ? "text-gray-900 bg-white/25 shadow-md shadow-white/20"
+                          : "text-gray-700 hover:text-gray-900 hover:bg-white/15 hover:shadow-sm hover:shadow-white/10"
                       }`}
-                    ></span>
-                  </button>
-                )
-              })}
+                    >
+                      <span className="relative z-10">{item.name}</span>
+                      <span
+                        className={`absolute bottom-1 left-1/2 transform -translate-x-1/2 h-0.5 bg-gray-900 transition-all duration-300 rounded-full ${
+                          isActive ? "w-6" : "w-0 group-hover:w-6"
+                        }`}
+                      ></span>
+                    </button>
+                  )
+                })}
+              </div>
             </div>
 
-            <div className="flex items-center space-x-2 sm:space-x-3">
+            {/* Right - Contact + Mobile Menu */}
+            <div className="flex items-center space-x-2 sm:space-x-3 flex-shrink-0">
               <button
                 onClick={() => handleNavClick("#footer")}
                 className={`relative overflow-hidden bg-gray-900/85 text-white hover:bg-gray-800/90 transition-all duration-300 rounded-full font-semibold border border-gray-700/30 shadow-md shadow-gray-900/20 hover:scale-105 ${
-                  isScrolled
-                    ? "px-3 sm:px-4 py-1.5 text-xs sm:text-sm"
-                    : "px-4 sm:px-5 py-2 text-sm"
+                  isScrolled ? "px-3 sm:px-4 py-1.5 text-xs sm:text-sm" : "px-4 sm:px-5 py-2 text-sm"
                 }`}
                 style={{
                   backdropFilter: "blur(16px)",
                   WebkitBackdropFilter: "blur(16px)",
                 }}
               >
-                <span className="relative z-10">Contact Us</span>
+                <span className="relative z-10 whitespace-nowrap">Contact Us</span>
               </button>
 
               <button

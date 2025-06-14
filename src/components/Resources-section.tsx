@@ -97,7 +97,7 @@ export default function ResourcesSection() {
 ];
 
   return (
-    <section id="resources" className="relative w-full py-20 px-4 md:px-6 lg:px-8 bg-gray-50">
+    <section id="resources" className="relative w-full py-10 px-4 md:px-6 lg:px-8 bg-gray-50">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-4xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-5xl font-bold tracking-tight mb-4">Our Resources</h2>

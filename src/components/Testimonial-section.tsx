@@ -142,7 +142,7 @@ export default function TestimonialSection() {
   return (
     <section
       id="testimonials"
-      className="py-12 px-4 md:px-6 lg:px-8 relative overflow-hidden bg-gray-50"
+      className="py-10 px-4 md:px-6 lg:px-8 relative overflow-hidden bg-gray-50"
     >
       <div className="max-w-6xl mx-auto">
         {/* Floating Geometric Elements - Hidden on small mobile screens */}

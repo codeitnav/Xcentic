@@ -2,7 +2,7 @@ import { GlobeDemo } from "./Globe-animation"
 
 export default function Outreach() {
   return (
-    <section id="outreach" className="py-24 px-4 md:px-6 lg:px-8 bg-gray-50">
+    <section id="outreach" className="py-10 px-4 md:px-6 lg:px-8 bg-gray-50">
       <div
         className="w-full mx-auto rounded-[40px] overflow-hidden shadow-xl"
         style={{ border: "3px solid black", backgroundColor: "#d7f5e9" }}

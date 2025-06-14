@@ -32,7 +32,7 @@ const ServiceSection = () => {
   return (
     <section
       id="services"
-      className="py-12 px-4 md:px-6 lg:px-8 relative overflow-hidden"
+      className="py-10 px-4 md:px-6 lg:px-8 relative overflow-hidden"
       style={{ backgroundColor: "#d7f5e9" }}
     >
       {/* Background Elements */}

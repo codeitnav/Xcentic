@@ -46,7 +46,7 @@ const OurExpertise = () => {
 
     const container = scrollContainerRef.current;
     if (container) {
-      container.style.scrollBehavior = "smooth"; // Add smooth scrolling
+      container.style.scrollBehavior = "smooth"; 
       container.addEventListener("scroll", handleScroll);
       // Ensure touch scrolling works on mobile
       (
@@ -65,7 +65,7 @@ const OurExpertise = () => {
   return (
     <section
       id="expertise"
-      className="w-full overflow-x-hidden py-20 px-4 md:px-6 lg:px-8 relative"
+      className="w-full overflow-x-hidden py-10 px-4 md:px-6 lg:px-8 relative"
     >
       {/* Floating Geometric Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none hidden md:block">
@@ -249,18 +249,6 @@ const OurExpertise = () => {
               </div>
             </div>
 
-            {/* Progress Indicators */}
-            <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-2">
-              {expertiseContent.map((_, index) => (
-                <div
-                  key={`indicator-${index}`}
-                  className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                    activeIndex === index ? "bg-black w-8" : "bg-gray-400"
-                  }`}
-                ></div>
-              ))}
-            </div>
-
             {/* Section Counter */}
             <div className="absolute top-6 right-6 bg-black text-white px-3 py-1 rounded-full">
               <span className="text-sm font-semibold">
@@ -270,10 +258,10 @@ const OurExpertise = () => {
             </div>
           </div>
 
-          {/* Invisible Scroll Area */}
+          {/* Invisible Scroll Area - Removed scrollbar completely */}
           <div
             ref={scrollContainerRef}
-            className="absolute inset-0 overflow-y-auto opacity-0 cursor-pointer touch-pan-y"
+            className="absolute inset-0 overflow-y-auto opacity-0 touch-pan-y"
             style={{
               scrollbarWidth: "none",
               msOverflowStyle: "none",
@@ -360,7 +348,7 @@ const OurExpertise = () => {
   );
 };
 
-const expertiseContent = [
+const expertiseContent = [  
   {
     title: "Artificial Intelligence",
     description:
