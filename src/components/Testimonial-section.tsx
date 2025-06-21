@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { cn } from "@/lib/utils";
 
 interface Testimonial {
@@ -17,7 +17,7 @@ const testimonials: Testimonial[] = [
     name: "Anjali Mehta",
     position: "Founder",
     quote:
-      "Before I started using Xcentic's e-commerce solution, I was running my business through WhatsApp and Instagram DMs. Order management was chaotic, and I often missed follow-ups. After launching my store through their platform, the difference has been huge. The dashboard is so easy to use—even someone with no tech background like me can manage everything. From adding products, tracking orders, to managing payments—it's all seamless now. My customers love the user experience, and I've started receiving online orders from cities I never expected! Xcentic's support team is always available, and they guided me through every step. I truly feel like I've taken my business to the next level.",
+      "Before I started using Xcentic's e-commerce solution, I was running my business through WhatsApp and Instagram DMs. Order management was chaotic, and I often missed follow-ups. After launching my store through their platform, the difference has been huge. The dashboard is so easy to use—even someone with no tech background like me can manage everything. My customers love the user experience, and I've started receiving online orders from cities I never expected! Xcentic's support team is always available, and they guided me through every step. I truly feel like I've taken my business to the next level.",
   },
   {
     id: 2,
@@ -240,10 +240,10 @@ export default function TestimonialSection() {
 
         {/* Main Testimonial Display */}
         <div className="relative">
-          <div className="max-w-md mx-auto">
+          <div className="max-w-sm sm:max-w-md mx-auto">
             <div
               className={cn(
-                "bg-white rounded-3xl shadow-sm p-6 transition-all duration-300 ease-in-out transform h-[450px] flex flex-col",
+                "bg-white rounded-3xl shadow-sm p-4 sm:p-6 transition-all duration-300 ease-in-out transform h-[450px] flex flex-col",
                 isTransitioning
                   ? "scale-95 opacity-70"
                   : "scale-100 opacity-100"

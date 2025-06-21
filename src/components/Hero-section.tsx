@@ -28,68 +28,75 @@ const HeroSection = () => {
       className="min-h-screen bg-gray-50 relative overflow-hidden flex items-center w-full mt-10 sm:mt-0 px-4 sm:px-6 md:px-12 lg:px-20 xl:px-32 py-6 sm:py-16 lg:py-24"
     >
       {/* Floating Geometric Elements - Hidden on small mobile screens */}
-      <div className="absolute inset-0 overflow-hidden hidden sm:block">
-        {/* Top Left Elements - shifted toward center with more vertical spacing */}
+      <div className="absolute inset-0 overflow-hidden hidden sm:block pointer-events-none">
+        {/* Top Left Elements - responsive sizes and spacing */}
         <div
-          className="absolute top-20 left-36 w-16 h-16 bg-gradient-to-br from-orange-400 to-orange-500 rounded-lg shadow-lg transform rotate-12 animate-float"
+          className="absolute top-24 left-24 sm:top-32 sm:left-48 w-10 h-14 sm:w-16 sm:h-20 bg-gradient-to-br from-orange-400 to-orange-500 rounded-lg shadow-lg transform rotate-12 animate-float"
           style={{
             transform: `translate(${mousePosition.x * 0.01}px, ${mousePosition.y * 0.01}px) rotate(12deg)`,
           }}
         ></div>
+
         <div
-          className="absolute top-44 left-48 w-12 h-12 bg-gradient-to-br from-teal-400 to-teal-500 rounded-full shadow-lg animate-float delay-300"
+          className="absolute top-44 left-40 sm:top-60 sm:left-64 w-8 h-14 sm:w-12 sm:h-20 bg-gradient-to-br from-teal-400 to-teal-500 rounded-full shadow-lg animate-float delay-300"
           style={{
             transform: `translate(${mousePosition.x * 0.015}px, ${mousePosition.y * 0.015}px)`,
           }}
         ></div>
+
         <div
-          className="absolute top-72 left-32 w-20 h-8 bg-gradient-to-r from-purple-400 to-purple-500 rounded-lg shadow-lg transform -rotate-12 animate-float delay-700"
+          className="absolute top-72 left-28 sm:top-96 sm:left-44 w-12 h-10 sm:w-20 sm:h-12 bg-gradient-to-r from-purple-400 to-purple-500 rounded-lg shadow-lg transform -rotate-12 animate-float delay-700"
           style={{
             transform: `translate(${mousePosition.x * 0.008}px, ${mousePosition.y * 0.008}px) rotate(-12deg)`,
           }}
         ></div>
 
-        {/* Top Right Elements - shifted toward center */}
+        {/* Top Right Elements - responsive spacing and size */}
         <div
-          className="absolute top-16 right-36 w-14 h-14 bg-gradient-to-br from-emerald-400 to-emerald-500 rounded-lg shadow-lg transform rotate-45 animate-float delay-500"
+          className="absolute top-20 right-24 sm:top-28 sm:right-48 w-12 h-18 sm:w-14 sm:h-24 bg-gradient-to-br from-emerald-400 to-emerald-500 rounded-lg shadow-lg transform rotate-45 animate-float delay-500"
           style={{
             transform: `translate(${mousePosition.x * -0.012}px, ${mousePosition.y * 0.012}px) rotate(45deg)`,
           }}
         ></div>
+
         <div
-          className="absolute top-40 right-28 w-10 h-10 bg-gradient-to-br from-blue-400 to-blue-500 rounded-full shadow-lg animate-float delay-1000"
+          className="absolute top-52 right-20 sm:top-64 sm:right-36 w-8 h-16 sm:w-10 sm:h-20 bg-gradient-to-br from-blue-400 to-blue-500 rounded-full shadow-lg animate-float delay-1000"
           style={{
             transform: `translate(${mousePosition.x * -0.01}px, ${mousePosition.y * 0.01}px)`,
           }}
         ></div>
+
         <div
-          className="absolute top-64 right-44 w-18 h-6 bg-gradient-to-r from-pink-400 to-pink-500 rounded-lg shadow-lg transform rotate-6 animate-float delay-200"
+          className="absolute top-[22rem] right-28 sm:top-[28rem] sm:right-56 w-12 h-8 sm:w-18 sm:h-10 bg-gradient-to-r from-pink-400 to-pink-500 rounded-lg shadow-lg transform rotate-6 animate-float delay-200"
           style={{
             transform: `translate(${mousePosition.x * -0.015}px, ${mousePosition.y * 0.015}px) rotate(6deg)`,
           }}
         ></div>
 
-        {/* Bottom Elements (unchanged) */}
+        {/* Bottom Elements - responsive adjustments */}
         <div
-          className="absolute bottom-32 left-24 w-12 h-12 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-lg shadow-lg transform -rotate-6 animate-float delay-800"
+          className="absolute bottom-28 left-20 sm:bottom-40 sm:left-32 w-10 h-14 sm:w-12 sm:h-20 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-lg shadow-lg transform -rotate-6 animate-float delay-800"
           style={{
             transform: `translate(${mousePosition.x * 0.01}px, ${mousePosition.y * -0.01}px) rotate(-6deg)`,
           }}
         ></div>
+
         <div
-          className="absolute bottom-48 right-16 w-16 h-16 bg-gradient-to-br from-indigo-400 to-indigo-500 rounded-lg shadow-lg transform rotate-12 animate-float delay-400"
+          className="absolute bottom-52 right-16 sm:bottom-64 sm:right-24 w-12 h-16 sm:w-16 sm:h-20 bg-gradient-to-br from-indigo-400 to-indigo-500 rounded-lg shadow-lg transform rotate-12 animate-float delay-400"
           style={{
             transform: `translate(${mousePosition.x * -0.008}px, ${mousePosition.y * -0.008}px) rotate(12deg)`,
           }}
         ></div>
+
         <div
-          className="absolute bottom-20 left-1/3 w-8 h-8 bg-gradient-to-br from-cyan-400 to-cyan-500 rounded-full shadow-lg animate-float delay-600"
+          className="absolute bottom-20 left-[30%] sm:bottom-28 sm:left-1/3 w-6 h-10 sm:w-8 sm:h-12 bg-gradient-to-br from-cyan-400 to-cyan-500 rounded-full shadow-lg animate-float delay-600"
           style={{
             transform: `translate(${mousePosition.x * 0.012}px, ${mousePosition.y * -0.012}px)`,
           }}
         ></div>
+
         <div
-          className="absolute bottom-40 right-1/3 w-14 h-6 bg-gradient-to-r from-red-400 to-red-500 rounded-lg shadow-lg transform rotate-15 animate-float delay-900"
+          className="absolute bottom-44 right-[30%] sm:bottom-60 sm:right-1/4 w-12 h-8 sm:w-14 sm:h-10 bg-gradient-to-r from-red-400 to-red-500 rounded-lg shadow-lg transform rotate-15 animate-float delay-900"
           style={{
             transform: `translate(${mousePosition.x * -0.01}px, ${mousePosition.y * -0.01}px) rotate(15deg)`,
           }}

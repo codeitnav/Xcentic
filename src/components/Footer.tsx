@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Facebook,
   Twitter,
@@ -6,9 +8,15 @@ import {
   Mail,
   Phone,
 } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+
+  const handleCareersClick = () => {
+    alert("Coming Soon");
+  };
 
   return (
     <section id="footer" style={{ backgroundColor: "#d7f5e9" }}>
@@ -16,12 +24,22 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-12">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
             {/* Brand Section */}
-            <div className="lg:col-span-1 flex flex-col justify-between h-full">
+            <div className="lg:col-span-1 flex flex-col justify-between h-full min-h-[200px] lg:min-h-[250px]">
               <div className="mb-6">
                 <h2 className="text-2xl font-bold tracking-wider">XCENTIC</h2>
                 <div className="h-1 w-16 bg-white mt-2"></div>
               </div>
 
+              {/* Image at bottom */}
+              <div className="mt-auto">
+                <Image
+                  src="/dcma.png"
+                  alt="Xcentic Logo"
+                  width={120}
+                  height={60}
+                  className="object-contain w-20 h-10 sm:w-24 sm:h-12 md:w-28 md:h-14 lg:w-32 lg:h-16"
+                />
+              </div>
             </div>
 
             {/* Company Section */}
@@ -30,19 +48,19 @@ export default function Footer() {
               <ul className="space-y-3">
                 <li>
                   <a
-                    href="/about"
+                    href="#services"
                     className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
                   >
                     About us
                   </a>
                 </li>
                 <li>
-                  <a
-                    href="/careers"
-                    className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
+                  <button
+                    onClick={handleCareersClick}
+                    className="text-gray-400 hover:text-white transition-colors duration-200 text-sm text-left"
                   >
                     Careers
-                  </a>
+                  </button>
                 </li>
               </ul>
             </div>
@@ -52,28 +70,31 @@ export default function Footer() {
               <h3 className="text-lg font-semibold mb-4">Policies</h3>
               <ul className="space-y-3">
                 <li>
-                  <a
-                    href="/for-taskers"
+                  <Link
+                    href="/privacy-policy"
+                    rel="noopener noreferrer"
                     className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
                   >
                     Privacy Policy
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href="/for-drivers"
+                  <Link
+                    href="/refund-policy"
+                    rel="noopener noreferrer"
                     className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
                   >
                     Refund Policy
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href="/for-merchants"
+                  <Link
+                    href="/terms-conditions"
+                    rel="noopener noreferrer"
                     className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
                   >
                     Terms and Conditions
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -83,28 +104,28 @@ export default function Footer() {
               <h3 className="text-lg font-semibold mb-4">Resources</h3>
               <ul className="space-y-3">
                 <li>
-                  <a
-                    href="/for-taskers"
+                  <Link
+                    href="/#resources"
                     className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
                   >
                     For Taskers
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href="/for-drivers"
+                  <Link
+                    href="/#resources"
                     className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
                   >
                     For Drivers
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href="/for-merchants"
+                  <Link
+                    href="/#resources"
                     className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
                   >
                     For Merchants
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>

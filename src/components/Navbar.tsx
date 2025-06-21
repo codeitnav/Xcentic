@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { useMemo } from "react";
+import Image from "next/image";
 
 interface NavItem {
   name: string;
@@ -88,15 +89,13 @@ const Navbar = () => {
           <div className="flex items-center justify-between h-full min-h-[3rem]">
             {/* Left - Logo */}
             <div className="flex-shrink-0">
-              <Link
-                href="/"
-                className={`font-bold text-gray-800 tracking-tight transition-all duration-500 ${
-                  isScrolled ? "text-lg sm:text-xl" : "text-xl sm:text-2xl"
-                }`}
-                style={{ fontWeight: 800 }}
-              >
-                XCENTIC
-              </Link>
+              <Image
+                src="/logo_dark.png"
+                alt="XCENTIC Logo"
+                width={150}
+                height={40}
+                className="object-contain h-10"
+              />
             </div>
 
             {/* Center - Nav Items (Hidden on smaller screens) */}
@@ -105,7 +104,6 @@ const Navbar = () => {
                 {navItems.map((item) => {
                   const sectionId = item.href.substring(1);
                   const isActive = activeSection === sectionId;
-
                   return (
                     <button
                       key={item.name}
