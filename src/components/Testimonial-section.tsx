@@ -1,14 +1,14 @@
-"use client";
+"use client"
 
-import { useState, useEffect } from "react";
-import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { cn } from "@/lib/utils";
+import { useState, useEffect } from "react"
+import { ChevronLeft, ChevronRight } from "lucide-react"
+import { cn } from "@/lib/utils"
 
 interface Testimonial {
-  id: number;
-  name: string;
-  position: string;
-  quote: string;
+  id: number
+  name: string
+  position: string
+  quote: string
 }
 
 const testimonials: Testimonial[] = [
@@ -17,7 +17,7 @@ const testimonials: Testimonial[] = [
     name: "Anjali Mehta",
     position: "Founder",
     quote:
-      "Before I started using Xcentic's e-commerce solution, I was running my business through WhatsApp and Instagram DMs. Order management was chaotic, and I often missed follow-ups. After launching my store through their platform, the difference has been huge. The dashboard is so easy to use—even someone with no tech background like me can manage everything. My customers love the user experience, and I've started receiving online orders from cities I never expected! Xcentic's support team is always available, and they guided me through every step. I truly feel like I've taken my business to the next level.",
+      "Before I started using Xcentic's e-commerce solution, I was running my business through WhatsApp and Instagram DMs. Order management was chaotic, and I often missed follow-ups. After launching my store through their platform, the difference has been huge. The dashboard is so easy to use—even someone with no tech background like me can manage everything. From adding products, tracking orders, to managing payments—it's all seamless now. My customers love the user experience, and I've started receiving online orders from cities I never expected! Xcentic's support team is always available, and they guided me through every step. I truly feel like I've taken my business to the next level.",
   },
   {
     id: 2,
@@ -68,74 +68,69 @@ const testimonials: Testimonial[] = [
     quote:
       "We handle multiple sites across cities, and coordination was becoming a nightmare—material delivery updates, worker attendance, progress tracking, all over the place. Xcentic created a simple yet powerful app that lets us update site progress daily, track inventory, and even monitor labor productivity. Our central team now gets live updates from every project site. It has brought discipline and accountability across the board.",
   },
-];
+]
 
 export default function TestimonialSection() {
-  const [, setIsVisible] = useState(false);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [, setIsVisible] = useState(false)
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
 
   useEffect(() => {
-    setIsVisible(true);
-  }, []);
+    setIsVisible(true)
+  }, [])
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
-    };
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, []);
+      setMousePosition({ x: e.clientX, y: e.clientY })
+    }
+    window.addEventListener("mousemove", handleMouseMove)
+    return () => window.removeEventListener("mousemove", handleMouseMove)
+  }, [])
 
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isTransitioning, setIsTransitioning] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const [isTransitioning, setIsTransitioning] = useState(false)
 
   const nextTestimonial = () => {
-    if (isTransitioning) return;
-    setIsTransitioning(true);
-    setCurrentIndex((prev) => (prev + 1) % testimonials.length);
-  };
+    if (isTransitioning) return
+    setIsTransitioning(true)
+    setCurrentIndex((prev) => (prev + 1) % testimonials.length)
+  }
 
   const prevTestimonial = () => {
-    if (isTransitioning) return;
-    setIsTransitioning(true);
-    setCurrentIndex(
-      (prev) => (prev - 1 + testimonials.length) % testimonials.length
-    );
-  };
+    if (isTransitioning) return
+    setIsTransitioning(true)
+    setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length)
+  }
 
   const goToTestimonial = (index: number) => {
-    if (isTransitioning || index === currentIndex) return;
-    setIsTransitioning(true);
-    setCurrentIndex(index);
-  };
+    if (isTransitioning || index === currentIndex) return
+    setIsTransitioning(true)
+    setCurrentIndex(index)
+  }
 
   useEffect(() => {
     if (isTransitioning) {
-      const timer = setTimeout(() => setIsTransitioning(false), 300);
-      return () => clearTimeout(timer);
+      const timer = setTimeout(() => setIsTransitioning(false), 300)
+      return () => clearTimeout(timer)
     }
-  }, [isTransitioning]);
+  }, [isTransitioning])
 
   useEffect(() => {
     const interval = setInterval(() => {
       setIsTransitioning((transitioning) => {
         if (!transitioning) {
-          setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+          setCurrentIndex((prev) => (prev + 1) % testimonials.length)
         }
-        return transitioning;
-      });
-    }, 5000);
+        return transitioning
+      })
+    }, 5000)
 
-    return () => clearInterval(interval);
-  }, []);
+    return () => clearInterval(interval)
+  }, [])
 
-  const currentTestimonial = testimonials[currentIndex];
+  const currentTestimonial = testimonials[currentIndex]
 
   return (
-    <section
-      id="testimonials"
-      className="py-15 scroll-mt-24 px-4 md:px-6 lg:px-8 relative overflow-hidden bg-gray-50"
-    >
+    <section id="testimonials" className="py-15 scroll-mt-24 px-4 md:px-6 lg:px-8 relative overflow-hidden bg-gray-50">
       <div className="max-w-6xl mx-auto">
         {/* Floating Geometric Elements - Hidden on small mobile screens */}
         <div className="absolute inset-0 overflow-hidden hidden sm:block">
@@ -143,25 +138,19 @@ export default function TestimonialSection() {
           <div
             className="absolute top-20 left-16 w-16 h-16 bg-gradient-to-br from-orange-400 to-orange-500 rounded-lg shadow-lg transform rotate-12 animate-float"
             style={{
-              transform: `translate(${mousePosition.x * 0.01}px, ${
-                mousePosition.y * 0.01
-              }px) rotate(12deg)`,
+              transform: `translate(${mousePosition.x * 0.01}px, ${mousePosition.y * 0.01}px) rotate(12deg)`,
             }}
           ></div>
           <div
             className="absolute top-32 left-32 w-12 h-12 bg-gradient-to-br from-teal-400 to-teal-500 rounded-full shadow-lg animate-float delay-300"
             style={{
-              transform: `translate(${mousePosition.x * 0.015}px, ${
-                mousePosition.y * 0.015
-              }px)`,
+              transform: `translate(${mousePosition.x * 0.015}px, ${mousePosition.y * 0.015}px)`,
             }}
           ></div>
           <div
             className="absolute top-48 left-8 w-20 h-8 bg-gradient-to-r from-purple-400 to-purple-500 rounded-lg shadow-lg transform -rotate-12 animate-float delay-700"
             style={{
-              transform: `translate(${mousePosition.x * 0.008}px, ${
-                mousePosition.y * 0.008
-              }px) rotate(-12deg)`,
+              transform: `translate(${mousePosition.x * 0.008}px, ${mousePosition.y * 0.008}px) rotate(-12deg)`,
             }}
           ></div>
 
@@ -169,25 +158,19 @@ export default function TestimonialSection() {
           <div
             className="absolute top-16 right-20 w-14 h-14 bg-gradient-to-br from-emerald-400 to-emerald-500 rounded-lg shadow-lg transform rotate-45 animate-float delay-500"
             style={{
-              transform: `translate(${mousePosition.x * -0.012}px, ${
-                mousePosition.y * 0.012
-              }px) rotate(45deg)`,
+              transform: `translate(${mousePosition.x * -0.012}px, ${mousePosition.y * 0.012}px) rotate(45deg)`,
             }}
           ></div>
           <div
             className="absolute top-40 right-8 w-10 h-10 bg-gradient-to-br from-blue-400 to-blue-500 rounded-full shadow-lg animate-float delay-1000"
             style={{
-              transform: `translate(${mousePosition.x * -0.01}px, ${
-                mousePosition.y * 0.01
-              }px)`,
+              transform: `translate(${mousePosition.x * -0.01}px, ${mousePosition.y * 0.01}px)`,
             }}
           ></div>
           <div
             className="absolute top-64 right-32 w-18 h-6 bg-gradient-to-r from-pink-400 to-pink-500 rounded-lg shadow-lg transform rotate-6 animate-float delay-200"
             style={{
-              transform: `translate(${mousePosition.x * -0.015}px, ${
-                mousePosition.y * 0.015
-              }px) rotate(6deg)`,
+              transform: `translate(${mousePosition.x * -0.015}px, ${mousePosition.y * 0.015}px) rotate(6deg)`,
             }}
           ></div>
 
@@ -195,33 +178,25 @@ export default function TestimonialSection() {
           <div
             className="absolute bottom-32 left-24 w-12 h-12 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-lg shadow-lg transform -rotate-6 animate-float delay-800"
             style={{
-              transform: `translate(${mousePosition.x * 0.01}px, ${
-                mousePosition.y * -0.01
-              }px) rotate(-6deg)`,
+              transform: `translate(${mousePosition.x * 0.01}px, ${mousePosition.y * -0.01}px) rotate(-6deg)`,
             }}
           ></div>
           <div
             className="absolute bottom-48 right-16 w-16 h-16 bg-gradient-to-br from-indigo-400 to-indigo-500 rounded-lg shadow-lg transform rotate-12 animate-float delay-400"
             style={{
-              transform: `translate(${mousePosition.x * -0.008}px, ${
-                mousePosition.y * -0.008
-              }px) rotate(12deg)`,
+              transform: `translate(${mousePosition.x * -0.008}px, ${mousePosition.y * -0.008}px) rotate(12deg)`,
             }}
           ></div>
           <div
             className="absolute bottom-20 left-1/3 w-8 h-8 bg-gradient-to-br from-cyan-400 to-cyan-500 rounded-full shadow-lg animate-float delay-600"
             style={{
-              transform: `translate(${mousePosition.x * 0.012}px, ${
-                mousePosition.y * -0.012
-              }px)`,
+              transform: `translate(${mousePosition.x * 0.012}px, ${mousePosition.y * -0.012}px)`,
             }}
           ></div>
           <div
             className="absolute bottom-40 right-1/3 w-14 h-6 bg-gradient-to-r from-red-400 to-red-500 rounded-lg shadow-lg transform rotate-15 animate-float delay-900"
             style={{
-              transform: `translate(${mousePosition.x * -0.01}px, ${
-                mousePosition.y * -0.01
-              }px) rotate(15deg)`,
+              transform: `translate(${mousePosition.x * -0.01}px, ${mousePosition.y * -0.01}px) rotate(15deg)`,
             }}
           ></div>
         </div>
@@ -233,8 +208,8 @@ export default function TestimonialSection() {
           </h2>
           <div className="h-1 w-40 bg-black mx-auto mt-5 mb-4"></div>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Discover how businesses across industries have transformed their
-            operations with Xcentic&apos;s cutting-edge digital solutions.
+            Discover how businesses across industries have transformed their operations with Xcentic&apos;s cutting-edge
+            digital solutions.
           </p>
         </div>
 
@@ -243,51 +218,65 @@ export default function TestimonialSection() {
           <div className="max-w-sm sm:max-w-md mx-auto">
             <div
               className={cn(
-                "bg-white rounded-3xl shadow-sm p-4 sm:p-6 transition-all duration-300 ease-in-out transform h-[450px] flex flex-col",
-                isTransitioning
-                  ? "scale-95 opacity-70"
-                  : "scale-100 opacity-100"
+                "bg-white rounded-3xl shadow-sm p-4 sm:p-6 transition-all duration-300 ease-in-out transform h-[350px] sm:h-[450px] flex flex-col",
+                isTransitioning ? "scale-95 opacity-70" : "scale-100 opacity-100",
               )}
             >
               {/* Header section with fixed spacing */}
               <div className="flex-shrink-0 text-center mb-4">
-                <h3 className="text-xl font-semibold mb-1">
-                  {currentTestimonial.name}
-                </h3>
-                <p className="text-gray-500 text-sm">
-                  {currentTestimonial.position}
-                </p>
+                <h3 className="text-xl font-semibold mb-1">{currentTestimonial.name}</h3>
+                <p className="text-gray-500 text-sm">{currentTestimonial.position}</p>
               </div>
 
               {/* Quote section with scrollable content */}
               <div className="flex-1 flex items-start justify-center overflow-hidden">
                 <div className="h-full overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent pr-2">
-                  <p className="text-gray-600 leading-relaxed text-center text-sm">
-                    {currentTestimonial.quote}
-                  </p>
+                  <p className="text-gray-600 leading-relaxed text-center text-sm">{currentTestimonial.quote}</p>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Navigation Arrows */}
-          <button
-            onClick={prevTestimonial}
-            disabled={isTransitioning}
-            className="absolute left-0 md:left-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white rounded-full shadow-sm border border-gray-200 flex items-center justify-center hover:bg-gray-50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed z-10"
-            aria-label="Previous testimonial"
-          >
-            <ChevronLeft className="w-5 h-5 text-gray-700" />
-          </button>
+          {/* Navigation Arrows - Side positioning for desktop, bottom center for mobile */}
+          <div className="hidden md:block">
+            <button
+              onClick={prevTestimonial}
+              disabled={isTransitioning}
+              className="absolute left-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white rounded-full shadow-sm border border-gray-200 flex items-center justify-center hover:bg-gray-50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed z-10"
+              aria-label="Previous testimonial"
+            >
+              <ChevronLeft className="w-5 h-5 text-gray-700" />
+            </button>
 
-          <button
-            onClick={nextTestimonial}
-            disabled={isTransitioning}
-            className="absolute right-0 md:right-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white rounded-full shadow-sm border border-gray-200 flex items-center justify-center hover:bg-gray-50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed z-10"
-            aria-label="Next testimonial"
-          >
-            <ChevronRight className="w-5 h-5 text-gray-700" />
-          </button>
+            <button
+              onClick={nextTestimonial}
+              disabled={isTransitioning}
+              className="absolute right-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white rounded-full shadow-sm border border-gray-200 flex items-center justify-center hover:bg-gray-50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed z-10"
+              aria-label="Next testimonial"
+            >
+              <ChevronRight className="w-5 h-5 text-gray-700" />
+            </button>
+          </div>
+
+          {/* Mobile Navigation Arrows - Bottom center positioning */}
+          <div className="md:hidden flex justify-center space-x-4 mt-6">
+            <button
+              onClick={prevTestimonial}
+              disabled={isTransitioning}
+              className="w-12 h-12 bg-white rounded-full shadow-sm border border-gray-200 flex items-center justify-center hover:bg-gray-50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed z-10"
+              aria-label="Previous testimonial"
+            >
+              <ChevronLeft className="w-5 h-5 text-gray-700" />
+            </button>
+
+            <button
+              onClick={nextTestimonial}
+              disabled={isTransitioning}
+              className="w-12 h-12 bg-white rounded-full shadow-sm border border-gray-200 flex items-center justify-center hover:bg-gray-50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed z-10"
+            >
+              <ChevronRight className="w-5 h-5 text-gray-700" />
+            </button>
+          </div>
         </div>
 
         {/* Dots Indicator */}
@@ -299,9 +288,7 @@ export default function TestimonialSection() {
               disabled={isTransitioning}
               className={cn(
                 "w-2 h-2 rounded-full transition-all duration-200 disabled:cursor-not-allowed",
-                index === currentIndex
-                  ? "bg-black scale-125"
-                  : "bg-gray-300 hover:bg-gray-400"
+                index === currentIndex ? "bg-black scale-125" : "bg-gray-300 hover:bg-gray-400",
               )}
               aria-label={`Go to testimonial ${index + 1}`}
             />
@@ -329,5 +316,5 @@ export default function TestimonialSection() {
         </div>
       </div>
     </section>
-  );
+  )
 }

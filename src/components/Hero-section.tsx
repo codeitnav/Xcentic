@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight } from 'lucide-react';
 import ProjectDashboard from "./ProjectDashboard";
 import { ContactForm } from "@/components/Contact-form";
 
@@ -137,16 +137,16 @@ const HeroSection = () => {
             </button>
           </div>
 
-          {/* Dashboard Mockup - Removed max-width constraint and made it full width */}
+          {/* Dashboard Mockup - Extended width to break out of container */}
           <div
-            className={`relative w-full mx-auto px-2 sm:px-0 transition-all duration-1200 delay-300 ${
+            className={`relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 transition-all duration-1200 delay-300 ${
               isVisible
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-12"
             }`}
           >
             {/* Browser Frame */}
-            <div className="bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden">
+            <div className="bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden max-w-7xl mx-auto">
               {/* Browser Header */}
               <div className="px-2 sm:px-6 py-2 sm:py-4 flex items-center justify-between bg-gray-100 border-b border-gray-200">
                 <div className="flex space-x-2">
@@ -155,7 +155,7 @@ const HeroSection = () => {
                   <div className="w-3 h-3 bg-green-400 rounded-full"></div>
                 </div>
                 <div className="mx-1 sm:mx-4 md:mx-6 bg-white rounded-lg px-1 sm:px-3 md:px-4 py-1 sm:py-2 text-xs sm:text-sm text-gray-600 border border-gray-200">
-                  https://app.xcentic.com/dashboard
+                  https://app.xcentric.com/dashboard
                 </div>
                 <div className="flex space-x-2">
                   <div className="w-6 h-6 bg-gray-300 rounded"></div>
