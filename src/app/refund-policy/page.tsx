@@ -41,7 +41,7 @@ export default function RefundPolicyPage() {
             <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">2. Custom and Digital Work</h2>
             <p>
               Most of our services involve custom work, digital deliverables, and strategic efforts tailored
-              specifically to each client's requirements. These are non-tangible and non-returnable, making them
+              specifically to each client&apos;s requirements. These are non-tangible and non-returnable, making them
               non-refundable once the project has begun or the scope has been agreed upon.
             </p>
 
@@ -74,7 +74,7 @@ export default function RefundPolicyPage() {
             <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">6. Disputes</h2>
             <p>
               If you believe there has been an error or issue in service delivery, please contact us within 7 days of
-              project milestone delivery. We'll do our best to resolve concerns amicably, but this does not entitle you
+              project milestone delivery. We&apos;ll do our best to resolve concerns amicably, but this does not entitle you
               to a refund unless stated in writing.
             </p>
 

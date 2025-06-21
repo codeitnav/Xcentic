@@ -134,7 +134,7 @@ export default function PrivacyPolicyPage() {
               <li>Legal compliance with international transfer standards</li>
             </ul>
 
-            <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">10. Children's Privacy</h2>
+            <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">10. Children&apos;s Privacy</h2>
             <p>
               Our services are not intended for children under 18 years of age. We do not knowingly collect data from
               minors. If we learn that we have collected personal data from a child, we will take steps to delete it.

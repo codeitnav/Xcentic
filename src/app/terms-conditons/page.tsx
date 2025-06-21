@@ -21,9 +21,9 @@ export default function TermsConditionsPage() {
 
           <div className="prose max-w-none text-gray-700 space-y-6">
             <p>
-              Welcome to Xcentic Technologies. These Terms & Conditions ("Terms") govern your access to and use of our
-              website, products, and services ("Services") operated by Xcentic Technologies, located at Aakash Vihar,
-              Near SRM University, Modinagar, Ghaziabad (U.P.) – 201204 ("we," "us," or "our").
+              Welcome to Xcentic Technologies. These Terms &amp; Conditions (&quot;Terms&quot;) govern your access to and use of our
+              website, products, and services (&quot;Services&quot;) operated by Xcentic Technologies, located at Aakash Vihar,
+              Near SRM University, Modinagar, Ghaziabad (U.P.) – 201204 (&quot;we,&quot; &quot;us,&quot; or &quot;our&quot;).
             </p>
             <p>
               By accessing or using our Services, you agree to be bound by these Terms. If you do not agree, please do
@@ -141,11 +141,11 @@ export default function TermsConditionsPage() {
             <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">12. Changes to Terms</h2>
             <p>
               We reserve the right to revise these Terms at any time. Updated versions will be posted on our website
-              with the "Effective Date." Continued use after changes constitutes acceptance of the new terms.
+              with the &quot;Effective Date.&quot; Continued use after changes constitutes acceptance of the new terms.
             </p>
 
             <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">13. Contact Us</h2>
-            <p>If you have any questions about these Terms & Conditions, please contact:</p>
+            <p>If you have any questions about these Terms &amp; Conditions, please contact:</p>
             <div className="bg-gray-50 p-4 rounded-lg mt-4">
               <p className="font-semibold">Xcentic Technologies</p>
               <p>📧 Email: support@xcentic.com</p>
