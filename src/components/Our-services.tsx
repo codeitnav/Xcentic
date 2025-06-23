@@ -1,7 +1,6 @@
 "use client"
 
 import { Carousel, Card } from "@/components/ui/cards-carousel"
-import { ArrowRight } from "lucide-react"
 import { useState } from "react"
 import { ContactForm } from "@/components/Contact-form"
 
