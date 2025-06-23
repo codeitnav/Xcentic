@@ -98,38 +98,6 @@ export default function Footer() {
                 </li>
               </ul>
             </div>
-
-            {/* Resources Section */}
-            <div>
-              <h3 className="text-lg font-semibold mb-4">Resources</h3>
-              <ul className="space-y-3">
-                <li>
-                  <Link
-                    href="/#resources"
-                    className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
-                  >
-                    For Taskers
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/#resources"
-                    className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
-                  >
-                    For Drivers
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/#resources"
-                    className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
-                  >
-                    For Merchants
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
             {/* Contacts Section */}
             <div>
               <h3 className="text-lg font-semibold mb-4">Contacts</h3>

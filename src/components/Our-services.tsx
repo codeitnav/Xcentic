@@ -1,26 +1,38 @@
-"use client";
+"use client"
 
-import { Carousel, Card } from "@/components/ui/cards-carousel";
-import { ArrowRight } from "lucide-react";
-import { useState } from "react";
-import { ContactForm } from "@/components/Contact-form";
+import { Carousel, Card } from "@/components/ui/cards-carousel"
+import { ArrowRight } from "lucide-react"
+import { useState } from "react"
+import { ContactForm } from "@/components/Contact-form"
 
 const ServiceSection = () => {
-  const [showContactForm, setShowContactForm] = useState(false);
+  const [showContactForm, setShowContactForm] = useState(false)
 
   const serviceCards = services.map((service, index) => (
     <Card
       key={service.title}
       card={{
-        src: `/services/${service.icon.toLowerCase()}.svg`,
+        src: service.isAMC ? service.bgImage : `/services/${service.icon.toLowerCase()}.svg`,
         title: service.title,
         category: service.shortDescription,
         bgImage: service.bgImage,
-        content: (
+        content: service.isAMC ? (
           <div className="space-y-6">
-            <p className="text-gray-600 leading-relaxed">
-              {service.description}
-            </p>
+            <div className="cursor-pointer" onClick={() => setShowContactForm(true)}>
+              <p className="text-gray-600 leading-relaxed">{service.description}</p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mt-4">
+                {service.features.map((feature, i) => (
+                  <div key={i} className="flex items-center space-x-2">
+                    <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full"></div>
+                    <span className="text-gray-700">{feature}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        ) : (
+          <div className="space-y-6">
+            <p className="text-gray-600 leading-relaxed">{service.description}</p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
               {service.features.map((feature, i) => (
                 <div key={i} className="flex items-center space-x-2">
@@ -34,7 +46,7 @@ const ServiceSection = () => {
       }}
       index={index}
     />
-  ));
+  ))
 
   return (
     <section
@@ -66,20 +78,9 @@ const ServiceSection = () => {
         </h2>
         <div className="h-1 w-40 bg-black mx-auto mt-6 mb-4"></div>
         <p className="text-black max-w-2xl mx-auto mb-4">
-          Discover how our specialized expertise across multiple domains can
-          transform your business and drive sustainable growth.
+          Discover how our specialized expertise across multiple domains can transform your business and drive
+          sustainable growth.
         </p>
-
-        {/* AMC Button */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-4 px-4 sm:px-0">
-          <button
-            onClick={() => setShowContactForm(true)}
-            className="group bg-black hover:bg-gray-800 text-white px-3 sm:px-4 md:px-5 py-1.5 sm:py-2 md:py-2.5 rounded-lg font-semibold text-xs sm:text-sm md:text-base transition-all duration-300 hover:scale-105 hover:shadow-xl flex items-center justify-center space-x-2"
-          >
-              <span>Get your AMC</span>
-            <ArrowRight className="h-3 w-3 sm:h-4 sm:w-4 transition-transform group-hover:translate-x-1" />
-          </button>
-        </div>
       </div>
 
       {/* Enhanced Carousel */}
@@ -90,10 +91,9 @@ const ServiceSection = () => {
       </div>
 
       {showContactForm && <ContactForm onClose={() => setShowContactForm(false)} />}
-
     </section>
-  );
-};
+  )
+}
 
 export const services = [
   {
@@ -103,12 +103,7 @@ export const services = [
       "Craft sleek, user-friendly mobile apps tailored to elevate your business and captivate your audience.",
     icon: "Smartphone",
     bgImage: "/app-dev.png",
-    features: [
-      "Responsive Design",
-      "SEO Optimization",
-      "Cross-Platform",
-      "Native Performance",
-    ],
+    features: ["Responsive Design", "SEO Optimization", "Cross-Platform", "Native Performance"],
   },
   {
     title: "Software Development",
@@ -117,12 +112,7 @@ export const services = [
       "Delivering cutting-edge software solutions to enhance efficiency, spark innovation, and drive results.",
     icon: "Code",
     bgImage: "/software.png",
-    features: [
-      "User-Friendly UI",
-      "Performance Optimized",
-      "Scalable Architecture",
-      "Quality Assurance",
-    ],
+    features: ["User-Friendly UI", "Performance Optimized", "Scalable Architecture", "Quality Assurance"],
   },
   {
     title: "Digital Transformation",
@@ -131,26 +121,15 @@ export const services = [
       "Empowering businesses to thrive in the modern era by upgrading legacy systems with forward-thinking digital solutions.",
     icon: "Globe",
     bgImage: "/digital-transformation.png",
-    features: [
-      "Scalable Architecture",
-      "Ongoing Support",
-      "Process Automation",
-      "System Integration",
-    ],
+    features: ["Scalable Architecture", "Ongoing Support", "Process Automation", "System Integration"],
   },
   {
     title: "Ideation & Design Strategy",
     shortDescription: "Creative Solutions",
-    description:
-      "Designing intuitive and impactful digital products through seamless collaboration and strategy.",
+    description: "Designing intuitive and impactful digital products through seamless collaboration and strategy.",
     icon: "Palette",
     bgImage: "/design.png",
-    features: [
-      "User Research",
-      "Prototype Testing",
-      "Design Systems",
-      "Brand Identity",
-    ],
+    features: ["User Research", "Prototype Testing", "Design Systems", "Brand Identity"],
   },
   {
     title: "IT Consulting",
@@ -159,41 +138,34 @@ export const services = [
       "Expert guidance to simplify complex IT challenges, aligning technology with business goals for measurable success.",
     icon: "Database",
     bgImage: "/it-consulting.png",
-    features: [
-      "API Development",
-      "Database Design",
-      "Technology Assessment",
-      "Strategic Planning",
-    ],
+    features: ["API Development", "Database Design", "Technology Assessment", "Strategic Planning"],
   },
   {
     title: "DevOps",
     shortDescription: "Continuous Delivery",
-    description:
-      "Accelerating development cycles and improving product quality with our streamlined DevOps solutions.",
+    description: "Accelerating development cycles and improving product quality with our streamlined DevOps solutions.",
     icon: "Shield",
     bgImage: "/devops.png",
-    features: [
-      "Data Encryption",
-      "Security Audits",
-      "CI/CD Pipelines",
-      "Infrastructure as Code",
-    ],
+    features: ["Data Encryption", "Security Audits", "CI/CD Pipelines", "Infrastructure as Code"],
   },
   {
     title: "Cloud Managed Services",
     shortDescription: "Scalable Infrastructure",
-    description:
-      "Optimizing and safeguarding your cloud infrastructure, so you can focus on strategic growth.",
+    description: "Optimizing and safeguarding your cloud infrastructure, so you can focus on strategic growth.",
     icon: "Cloud",
     bgImage: "/cloud-hosting.png",
-    features: [
-      "Data Encryption",
-      "Security Audits",
-      "Cloud Migration",
-      "24/7 Monitoring",
-    ],
+    features: ["Data Encryption", "Security Audits", "Cloud Migration", "24/7 Monitoring"],
   },
-];
+  {
+    title: "Get Your AMC (Annual Maintenance Contract)",
+    shortDescription: "24/7 Support Assurance",
+    description:
+      "Comprehensive annual maintenance contract ensuring your systems run smoothly with round-the-clock support and regular updates.",
+    icon: "Smartphone",
+    bgImage: "/amc.png",
+    features: ["24/7 Technical Support", "Regular System Updates", "Preventive Maintenance", "Priority Response Time"],
+    isAMC: true,
+  },
+]
 
-export default ServiceSection;
+export default ServiceSection

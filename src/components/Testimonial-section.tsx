@@ -298,15 +298,15 @@ export default function TestimonialSection() {
         {/* Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12 max-w-3xl mx-auto">
           <div className="text-center">
-            <div className="text-2xl font-bold text-gray-900 mb-1">500+</div>
+            <div className="text-2xl font-bold text-gray-900 mb-1">300+</div>
             <div className="text-sm text-gray-600">Projects Delivered</div>
           </div>
           <div className="text-center">
-            <div className="text-2xl font-bold text-gray-900 mb-1">98.5%</div>
+            <div className="text-2xl font-bold text-gray-900 mb-1">97%</div>
             <div className="text-sm text-gray-600">Client Satisfaction</div>
           </div>
           <div className="text-center">
-            <div className="text-2xl font-bold text-gray-900 mb-1">150+</div>
+            <div className="text-2xl font-bold text-gray-900 mb-1">290+</div>
             <div className="text-sm text-gray-600">Happy Clients</div>
           </div>
           <div className="text-center">

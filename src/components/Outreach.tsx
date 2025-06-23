@@ -48,7 +48,7 @@ export default function Outreach() {
                 <div className="grid grid-cols-3 gap-3 text-center sm:gap-5">
                   {[
                     { label: "Countries Served", value: "50+" },
-                    { label: "Global Clients", value: "500+" },
+                    { label: "Global Clients", value: "300+" },
                     { label: "Time Zones", value: "15+" },
                   ].map((stat, idx) => (
                     <div key={idx}>

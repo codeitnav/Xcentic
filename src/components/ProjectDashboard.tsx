@@ -35,7 +35,7 @@ const ProjectDashboard = () => {
             </div>
           </div>
           <div className="text-2xl sm:text-3xl font-bold text-gray-900 mb-1">
-            500+
+            300+
           </div>
           <div className="text-xs sm:text-sm text-gray-600">
             Projects Delivered
@@ -56,7 +56,7 @@ const ProjectDashboard = () => {
             </div>
           </div>
           <div className="text-2xl sm:text-3xl font-bold text-gray-900 mb-1">
-            98.5%
+            97%
           </div>
           <div className="text-xs sm:text-sm text-gray-600">
             Client Satisfaction
@@ -77,7 +77,7 @@ const ProjectDashboard = () => {
             </div>
           </div>
           <div className="text-2xl sm:text-3xl font-bold text-gray-900 mb-1">
-            150+
+            290+
           </div>
           <div className="text-xs sm:text-sm text-gray-600">Happy Clients</div>
         </div>
