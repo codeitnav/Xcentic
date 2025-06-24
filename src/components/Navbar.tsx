@@ -153,7 +153,7 @@ const Navbar = () => {
                   isOverFooter
                     ? "bg-gray-900/90 text-white hover:bg-gray-800/95 border-gray-700/40 shadow-gray-900/20"
                     : "bg-gray-900/85 text-white hover:bg-gray-800/90 border-gray-700/30 shadow-gray-900/20"
-                } ${isScrolled ? "px-3 sm:px-4 py-1.5 text-xs sm:text-sm" : "px-4 sm:px-5 py-2 text-sm"}`}
+                } ${isScrolled ? "px-3 sm:px-4 py-1.5 text-xs sm:text-sm" : "px-3 sm:px-5 py-2 text-sm"}`}
                 style={{
                   backdropFilter: "blur(16px)",
                   WebkitBackdropFilter: "blur(16px)",

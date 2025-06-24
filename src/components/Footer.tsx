@@ -24,7 +24,7 @@ export default function Footer() {
               </div>
 
               {/* DMCA Image and text side by side */}
-              <div className="mt-auto flex items-end space-x-3">
+              <div className="mt-auto flex flex-col space-y-2 sm:flex-row sm:items-end sm:space-x-3 sm:space-y-0 lg:max-w-[350px]">
                 <Image
                   src="/dcma.png"
                   alt="DMCA Protected"
@@ -32,7 +32,7 @@ export default function Footer() {
                   height={60}
                   className="object-contain w-20 h-10 sm:w-24 sm:h-12 md:w-28 md:h-14 lg:w-32 lg:h-16 flex-shrink-0"
                 />
-                <p className="text-gray-400 text-sm leading-tight hidden lg:block">
+                <p className="text-gray-400 text-xs sm:text-sm lg:text-sm leading-snug">
                   Full stack mobile (iOS, Android) and web app design and development agency
                 </p>
               </div>
