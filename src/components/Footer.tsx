@@ -1,44 +1,40 @@
-"use client";
+"use client"
 
-import {
-  Facebook,
-  Twitter,
-  Linkedin,
-  Instagram,
-  Mail,
-  Phone,
-} from "lucide-react";
-import Image from "next/image";
-import Link from "next/link";
+import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone } from "lucide-react"
+import Image from "next/image"
+import Link from "next/link"
 
 export default function Footer() {
-  const currentYear = new Date().getFullYear();
+  const currentYear = new Date().getFullYear()
 
   const handleCareersClick = () => {
-    alert("Coming Soon");
-  };
+    alert("Coming Soon")
+  }
 
   return (
     <section id="footer" style={{ backgroundColor: "#d7f5e9" }}>
-      <footer className="bg-black text-white rounded-t-[50px] mx-2 sm:mx-4 lg:mx-8s">
+      <footer className="bg-black text-white rounded-t-[50px] mx-2 sm:mx-4 lg:mx-8">
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-12">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
             {/* Brand Section */}
-            <div className="lg:col-span-1 flex flex-col justify-between h-full min-h-[200px] lg:min-h-[250px]">
+            <div className="lg:col-span-2 flex flex-col justify-between h-full min-h-[200px] lg:min-h-[250px]">
               <div className="mb-6">
                 <h2 className="text-2xl font-bold tracking-wider">XCENTIC</h2>
                 <div className="h-1 w-16 bg-white mt-2"></div>
               </div>
 
-              {/* Image at bottom */}
-              <div className="mt-auto">
+              {/* DMCA Image and text side by side */}
+              <div className="mt-auto flex items-end space-x-3">
                 <Image
                   src="/dcma.png"
-                  alt="Xcentic Logo"
+                  alt="DMCA Protected"
                   width={120}
                   height={60}
-                  className="object-contain w-20 h-10 sm:w-24 sm:h-12 md:w-28 md:h-14 lg:w-32 lg:h-16"
+                  className="object-contain w-20 h-10 sm:w-24 sm:h-12 md:w-28 md:h-14 lg:w-32 lg:h-16 flex-shrink-0"
                 />
+                <p className="text-gray-400 text-sm leading-tight hidden lg:block">
+                  Full stack mobile (iOS, Android) and web app design and development agency
+                </p>
               </div>
             </div>
 
@@ -47,10 +43,7 @@ export default function Footer() {
               <h3 className="text-lg font-semibold mb-4">Company</h3>
               <ul className="space-y-3">
                 <li>
-                  <a
-                    href="#services"
-                    className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
-                  >
+                  <a href="#services" className="text-gray-400 hover:text-white transition-colors duration-200 text-sm">
                     About us
                   </a>
                 </li>
@@ -98,6 +91,7 @@ export default function Footer() {
                 </li>
               </ul>
             </div>
+
             {/* Contacts Section */}
             <div>
               <h3 className="text-lg font-semibold mb-4">Contacts</h3>
@@ -121,16 +115,11 @@ export default function Footer() {
                   </a>
                 </div>
                 <div className="flex items-start space-x-3">
-                  <div className="h-4 w-4 text-gray-400 mt-0.5 flex-shrink-0">
-                    📍
-                  </div>
+                  <div className="h-4 w-4 text-gray-400 mt-0.5 flex-shrink-0">📍</div>
                   <div>
-                    <p className="text-gray-400 text-sm font-medium">
-                      Address:
-                    </p>
+                    <p className="text-gray-400 text-sm font-medium">Address:</p>
                     <p className="text-gray-400 text-sm">
-                      Xcentic Technologies, Aakash Vihar, Near SRM University,
-                      Modinagar, Ghaziabad(U.P.)-201204
+                      Xcentic Technologies, Aakash Vihar, Near SRM University, Modinagar, Ghaziabad(U.P.)-201204
                     </p>
                   </div>
                 </div>
@@ -141,9 +130,7 @@ export default function Footer() {
           {/* Bottom Section */}
           <div className="border-t border-gray-800 mt-12 pt-8">
             <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-              <div className="text-gray-400 text-sm">
-                © {currentYear} XCENTIC Technologies. All rights reserved.
-              </div>
+              <div className="text-gray-400 text-sm">© {currentYear} XCENTIC Technologies. All rights reserved.</div>
 
               {/* Social Media Links */}
               <div className="flex space-x-4">
@@ -189,5 +176,5 @@ export default function Footer() {
         </div>
       </footer>
     </section>
-  );
+  )
 }
