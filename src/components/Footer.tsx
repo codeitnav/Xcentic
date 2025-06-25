@@ -1,6 +1,6 @@
 "use client"
 
-import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone } from "lucide-react"
+import { Twitter, Linkedin, Instagram, Mail, Phone } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 
@@ -135,16 +135,7 @@ export default function Footer() {
               {/* Social Media Links */}
               <div className="flex space-x-4">
                 <a
-                  href="https://facebook.com/xcentic"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white transition-colors duration-200"
-                  aria-label="Facebook"
-                >
-                  <Facebook className="h-5 w-5" />
-                </a>
-                <a
-                  href="https://twitter.com/xcentic"
+                  href="https://x.com/Xcenticdotcom"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-400 hover:text-white transition-colors duration-200"
@@ -153,7 +144,7 @@ export default function Footer() {
                   <Twitter className="h-5 w-5" />
                 </a>
                 <a
-                  href="https://linkedin.com/company/xcentic"
+                  href="https://www.linkedin.com/company/xcentic-technologies/posts/?feedView=all"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-400 hover:text-white transition-colors duration-200"
@@ -162,7 +153,7 @@ export default function Footer() {
                   <Linkedin className="h-5 w-5" />
                 </a>
                 <a
-                  href="https://instagram.com/xcentic"
+                  href="https://www.instagram.com/xcentic_com/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-400 hover:text-white transition-colors duration-200"
